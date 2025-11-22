@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM: STEVE_ABY_TONIO // ONLINE</title>
+    <meta name="description"
+        content="Portfolio of Steve Aby Tonio, a Computer Science Masters student at UIUC specializing in AI & ML.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- System Boot Overlay -->
+    <div id="boot-screen">
+        <div class="boot-content">
+            <img src="assets/favicon.svg" alt="System Logo" class="boot-logo">
+            <div class="loader"></div>
+            <div class="boot-text">INITIALIZING SYSTEM...</div>
+            <div class="boot-log">
+                <p>> CHECKING MEMORY... OK</p>
+                <p>> LOADING MODULES... OK</p>
+                <p>> CONNECTING TO NEURAL NET... OK</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Grid -->
+    <div class="bg-grid"></div>
+    <div class="scanline"></div>
+
+    <!-- HUD Corners -->
+    <div class="hud-corner top-left"></div>
+    <div class="hud-corner top-right"></div>
+    <div class="hud-corner bottom-left"></div>
+    <div class="hud-corner bottom-right"></div>
+
+    <nav class="hud-nav">
+        <div class="logo">[ STEVE.DEV ]</div>
+        <ul class="nav-links">
+            <li><a href="#hero" data-text="HOME">HOME</a></li>
+            <li><a href="#about" data-text="ABOUT">ABOUT</a></li>
+            <li><a href="#experience" data-text="EXP">EXPERIENCE</a></li>
+            <li><a href="#projects" data-text="PROJECTS">PROJECTS</a></li>
+            <li><a href="#skills" data-text="SKILLS">SKILLS</a></li>
+            <li><a href="#contact" class="cta-btn">CONTACT</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-content">
+            <div class="glitch-wrapper">
+                <h1 class="glitch" data-text="STEVE ABY TONIO">STEVE ABY TONIO</h1>
+            </div>
+            <h2 class="subtitle">STATUS: <span class="highlight">MASTERS STUDENT @ UIUC</span></h2>
+            <div class="typing-container">
+                <p class="tagline" id="typing-text"></p><span class="cursor">|</span>
+            </div>
+            <div class="hero-btns">
+                <a href="#experience" class="btn hud-btn">
+                    <span class="btn-text">INITIATE_VIEW_WORK</span>
+                    <span class="btn-decor"></span>
+                </a>
+                <a href="#contact" class="btn hud-btn-outline">
+                    <span class="btn-text">ESTABLISH_COMMS</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <div class="section-header">
+            <span class="section-num">01</span>
+            <h2 class="section-title">USER_PROFILE</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="about-grid">
+            <div class="profile-photo-container hud-card">
+                <div class="card-decor top-left"></div>
+                <div class="card-decor bottom-right"></div>
+                <img src="assets/steve.jpeg" alt="Steve Aby" class="profile-photo">
+            </div>
+            <div class="about-text hud-card">
+                <div class="card-decor top-left"></div>
+                <div class="card-decor bottom-right"></div>
+                <p>IDENTITY: <strong>Masters Student, Computer Science</strong></p>
+                <p>LOCATION: <strong>Univ. of Illinois Urbana-Champaign (UIUC)</strong></p>
+                <p>PREVIOUS_AFFILIATION: <strong>Barclays Bank PLC (Graduate Analyst)</strong></p>
+                <br>
+                <p class="terminal-text">
+                    > MISSION: Bridge the gap between complex AI/ML models and real-world applications.<br>
+                    > SKILLS_DETECTED: Salesforce Marketing Cloud, AMPScript, SSJS, JIRA, Python, HTML, CSS, JavaScript,
+                    NLP, ML.<br>
+                    > STATUS: Ready to solve impactful problems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="container">
+        <div class="section-header">
+            <span class="section-num">02</span>
+            <h2 class="section-title">SYSTEM_LOGS</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content hud-card">
+                    <span class="date">[ 2025.03 - 2025.08 ]</span>
+                    <img src="assets/barclays_logo.jpeg" class="timeline-logo" alt="Barclays Logo">
+                    <h3>ROLE: Graduate Analyst (SFMC Developer)</h3>
+                    <h4>ORG: Barclays Bank PLC</h4>
+                    <h4>GRADE: BA4 (SDE II)</h4>
+                    <ul class="log-list">
+                        <li>> Developed automations in SFMC’s Email and Automation Studios, leveraging core platform
+                            features to increase operational efficiency by 5x.</li>
+                        <li>> Developed and managed end-to-end execution of campaigns across marketing and servicing
+                            emails, including requirements gathering, technical architecture, design, deployment and
+                            stake-holder management.</li>
+                        <li>> Developed AMPscript, SQL queries, and dynamic content for emails and audience
+                            segmentation. ◦ Made architectural changes to existing automation to improve the operational
+                            efficiency and to mitigate the risks associated with human error.</li>
+                        <li>> Developed and deployed tracking automations for the reporting.</li>
+                        <li>> Worked closely with stakeholders to align marketing campaigns and servicing projects with
+                            overall business goals and priorities.</li>
+                        <li>> Conducted A/B testing and data analysis to optimize campaign performance.</li>
+                        <li>> Managed housekeeping activities for 3 business units by identifying and removing outdated,
+                            invalid, and inactive customers based on different criteria.</li>
+                        <li>> Received 25+recognitions from Directors, Managers and CDMs and PWR Owners.</li>
+                    </ul>
+                    <div class="stats-row">
+                        <div class="stat-card-mini">
+                            <h3>5x</h3>
+                            <p>EFFICIENCY</p>
+                        </div>
+                        <div class="stat-card-mini">
+                            <h3>50x</h3>
+                            <p>COST_RED.</p>
+                        </div>
+                        <div class="stat-card-mini">
+                            <h3>25+</h3>
+                            <p>AWARDS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content hud-card">
+                    <span class="date">[ 2023.07 - 2025.03 ]</span>
+                    <img src="assets/barclays_logo.jpeg" class="timeline-logo" alt="Barclays Logo">
+                    <h3>ROLE: Graduate Analyst (SFMC Developer)</h3>
+                    <h4>ORG: Barclays Bank PLC</h4>
+                    <h4>GRADE: BA3 (SDE I)</h4>
+                    <ul class="log-list">
+                        <li>> Developed, managed and implemented marketing campaigns using SFMC's Email Studio, Content
+                            Builder, and Journey Builder.</li>
+                        <li>> Created and managed complex automations in Automation Studio to streamline lead nurturing
+                            and customer engagement workflows.</li>
+                        <li>> Built and maintained reusable data extensions, ensuring proper segmentation for campaigns.
+                        </li>
+                        <li>> Expertise in data management, including building and maintaining data extensions,
+                            segmentation, and audience targeting.</li>
+                        <li>> Collaborated with cross-functional teams to ensure alignment with business goals and user
+                            expectations.</li>
+                        <li>> Oversaw final QA processes, including rendering tests and sanity checks, to guarantee
+                            flawless campaign execution.</li>
+                        <li>> Managing Scrum boards, ensuring Jira hygiene, and preparing monthly progress reports to
+                            track project milestones and campaign results.</li>
+                    </ul>
+                    <div class="stats-row">
+                        <div class="stat-card-mini">
+                            <h3>50+</h3>
+                            <p>AUTOMATIONS</p>
+                        </div>
+                        <div class="stat-card-mini">
+                            <h3>100+</h3>
+                            <p>Peer QA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content hud-card">
+                    <span class="date">[ 2022.01 - 2022.04 ]</span>
+                    <h3>ROLE: Tech Track Intern</h3>
+                    <h4>ORG: HighRadius</h4>
+                    <ul class="log-list">
+                        <li>> Built and deployed an AI-enabled FinTech B2B cloud application, working within an Agile
+                            workflow and gaining expertise in full-stack development, user requirements gathering, UX
+                            design, data modeling, machine learning models, UI components, and backend design.</li>
+                        <li>> Developed an intelligent invoice system capable of predicting expected payment dates.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content hud-card">
+                    <span class="date">[ 2022.01 - 2022.02 ]</span>
+                    <h3>ROLE: Data Science Intern</h3>
+                    <h4>ORG: LetsGrowMore</h4>
+                    <ul class="log-list">
+                        <li>> Created multiple machine learning models from diverse datasets to understand and help
+                            understand the large amount of data and predictions.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <div class="section-header">
+            <span class="section-num">03</span>
+            <h2 class="section-title">MODULES</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="project-grid">
+            <div class="project-card hud-card">
+                <div class="card-header">
+                    <h3>HyperSafety</h3>
+                    <span class="status-badge">DEPLOYED</span>
+                </div>
+                <div class="project-body">
+                    <p class="tech-stack">
+                        <span>[FLUTTER]</span> <span>[NODEJS]</span> <span>[ML]</span>
+                    </p>
+                    <p>Employee management system integrated with ML-powered image detection for safety compliance
+                        verification.</p>
+                    <a href="hypersafety.html" class="btn-link">ACCESS_MODULE >></a>
+                </div>
+            </div>
+            <div class="project-card hud-card">
+                <div class="card-header">
+                    <h3>VectorQuest</h3>
+                    <span class="status-badge">PUBLISHED</span>
+                </div>
+                <div class="project-body">
+                    <p class="tech-stack">
+                        <span>[PYTHON]</span> <span>[VECTOR_DB]</span> <span>[NLP]</span>
+                    </p>
+                    <p>Published research on optimizing open-domain question answering systems for speed and accuracy.
+                    </p>
+                    <a href="vectorquest.html" class="btn-link">VIEW_RESEARCH >></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container">
+        <div class="section-header">
+            <span class="section-num">04</span>
+            <h2 class="section-title">CAPABILITIES</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="skills-wrapper hud-card">
+            <div class="skill-category" style="grid-column: 1 / -1;">
+                <h3>// CERTIFICATIONS</h3>
+                <ul class="log-list">
+                    <li>> Salesforce Certified (Email Specialist, AI Associate, AI Specialist)</li>
+                    <li>> Oracle Database Foundations</li>
+                    <li>> Intel Artificial Intelligence and High-Performance Computing</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>// LANGUAGES</h3>
+                <div class="skill-tags">
+                    <span>Python</span>
+                    <span>MySQL</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>SSJS</span>
+                    <span>NLP</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>// DATABASES</h3>
+                <div class="skill-tags">
+                    <span>SQL</span>
+                    <span>Oracle</span>
+                    <span>MongoDB</span>
+                    <span>Data Extensions</span>
+                    <span>Data Filters</span>
+                    <span>Data Segmentation</span>
+                    <span>Audience Targeting</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>// TECHNOLOGIES</h3>
+                <div class="skill-tags">
+                    <span>Salesforce Marketing Cloud</span>
+                    <span>Email Studio</span>
+                    <span>Query Studio</span>
+                    <span>Automation Studio</span>
+                    <span>Journey Builder</span>
+                    <span>TAPI</span>
+                    <span>Scripting</span>
+                    <span>Machine Learning</span>
+                    <span>BIW2</span>
+                    <span>AB Initio</span>
+                    <span>Robotics</span>
+
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>// METHODOLOGIES</h3>
+                <div class="skill-tags">
+                    <span>Agile</span>
+                    <span>Project Management</span>
+                    <span>Teamwork</span>
+                    <span>JIRA</span>
+                    <span>Business Analysis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <div class="section-header">
+            <span class="section-num">05</span>
+            <h2 class="section-title">TRANSMISSION</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="contact-content hud-card">
+            <p>Ready to initiate collaboration protocols?</p>
+            <div class="contact-links">
+                <a href="mailto:stonio2@illinois.edu" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>stonio2@illinois.edu</span>
+                </a>
+                <a href="https://linkedin.com/in/steveaby" target="_blank" class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LINKEDIN</span>
+                </a>
+                <a href="https://github.com/steveaby" target="_blank" class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>GITHUB</span>
+                </a>
+                <a href="tel:+13312716861" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 331-271-6861</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>SYSTEM_ID: STEVE_ABY_TONIO // COPYRIGHT 2025 // END_OF_LINE</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

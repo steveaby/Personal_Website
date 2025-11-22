@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODULE: HYPERSAFETY // STEVE.DEV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/HyperSafety_Logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Page specific overrides */
+        .project-header {
+            margin-top: 100px;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 100px;
+            left: 50px;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-family: var(--font-tech);
+            font-size: 1.2rem;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--neon-glow);
+            transform: translateX(-5px);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .tech-list {
+            list-style: none;
+        }
+
+        .tech-list li {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--accent-dark-cyan);
+            padding-bottom: 0.5rem;
+        }
+
+        .tech-list strong {
+            color: var(--neon-glow);
+            font-family: var(--font-tech);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(69, 162, 158, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .back-link {
+                position: static;
+                margin-bottom: 2rem;
+                display: inline-flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Grid -->
+    <div class="bg-grid"></div>
+    <div class="scanline"></div>
+
+    <nav class="hud-nav">
+        <div class="logo">[ STEVE.DEV ]</div>
+        <ul class="nav-links">
+            <li><a href="index.html#hero" data-text="HOME">HOME</a></li>
+            <li><a href="index.html#projects" data-text="PROJECTS">PROJECTS</a></li>
+            <li><a href="index.html#contact" class="cta-btn">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="index.html#projects" class="back-link"><i class="fas fa-chevron-left"></i> RETURN_TO_BASE</a>
+
+        <header class="project-header">
+            <h1 class="glitch" data-text="HYPERSAFETY">HYPERSAFETY</h1>
+            <h2 class="subtitle">STATUS: <span class="highlight">ARCHIVED PROJECT</span></h2>
+        </header>
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/LwRyr8F4fns?rel=0" title="HyperSafety Demo"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+
+        <div class="content-grid">
+            <div class="main-content">
+                <div class="hud-card">
+                    <div class="card-decor top-left"></div>
+                    <div class="card-decor bottom-right"></div>
+                    <h3>// MISSION_BRIEF</h3>
+                    <p class="terminal-text">
+                        > OBJECTIVE: Monitor mask compliance in workplace environments.<br>
+                        > INITIATIVE: Created during COVID-19 pandemic.<br>
+                        > TEAM: Steve Aby Tonio, Ritvik Sharma, Vivek Nichani, Akul Jain, Harsh Ambasta.
+                    </p>
+                    <br>
+                    <p>HyperSafety is an employee management app in which images and details of Employees can be
+                        uploaded, which would then be used to detect whether or not employees are wearing a mask in the
+                        workplace.</p>
+                    <p>The system empowers administrators to monitor compliance effectively, ensuring a safer work
+                        environment through automated detection.</p>
+                </div>
+
+                <div class="hud-card" style="margin-top: 2rem;">
+                    <h3>// SYSTEM_COMPONENTS</h3>
+
+                    <div class="component-item" style="margin-bottom: 1.5rem;">
+                        <h4 class="highlight">> MASK_DETECTION</h4>
+                        <p>For mask detection, I have trained this model using CNNs and Face Mask Dataset. After
+                            cleaning and labeling, this dataset contains 5,000 masked faces of 525 people and 90,000
+                            normal faces. The verification dataset contains 4015 face images of 426 people, which is
+                            further organized into 7178 masked and non-masked sample pairs, including 3589 pairs of the
+                            same identity and 3589 pairs of different identities. I used the GPUs which are available on
+                            Google Colab for training and achieved an accuracy of 98.95%.</p>
+                    </div>
+
+                    <div class="component-item" style="margin-bottom: 1.5rem;">
+                        <h4 class="highlight">> FACE_RECOGNITION</h4>
+                        <p>In the event of a person not wearing a mask, I send that frame to the Face Recognition
+                            Service for identification. Here I already have the face encodings of all existing
+                            employees. So now when a frame is received from OpenCV, I find the location of the face in
+                            the frame using face_locations and then encode it with face_encodings. Now, I will find the
+                            most probable match of this encoding by comparing it with other employees' face encodings.
+                        </p>
+                    </div>
+
+                    <div class="component-item" style="margin-bottom: 1.5rem;">
+                        <h4 class="highlight">> NODEJS_BACKEND</h4>
+                        <p>NodeJS connects the HyperSafety frontend and services to the SQL database, which is a REST
+                            API for processing each user's request depending on the route. There are 2 primary
+                            end-points: <code>/admin_services</code>, which is used for logging in and signing up new
+                            admins and <code>/employee_services</code>, which is used for services such as
+                            adding/deleting employees, resetting warnings and displaying records. It also communicates
+                            with the python backend for updating employee warnings in the database upon identification.
+                        </p>
+                    </div>
+
+                    <div class="component-item">
+                        <h4 class="highlight">> PYTHON_BACKEND</h4>
+                        <p>The machine learning model for Mask-Detection & Face-Recognition are hosted on the python
+                            backend. The face encodings of known employees are stored on the python backend for
+                            comparing them with the incoming frames of the person who was found to NOT have a mask.
+                            After identification, the details are sent to the NodeJS backend for updating the employee's
+                            warnings in the database.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="hud-card">
+                    <h3>// TECH_STACK</h3>
+                    <ul class="tech-list">
+                        <li>
+                            <strong>PYTHON</strong><br>
+                            Backend for Hosting Mask-Detection & Face Recognition ML Services.
+                        </li>
+                        <li>
+                            <strong>NODEJS</strong><br>
+                            REST API connecting to MySQL for Admin Operations.
+                        </li>
+                        <li>
+                            <strong>FLUTTER</strong><br>
+                            Cross-platform UI for Admin Dashboard.
+                        </li>
+                        <li>
+                            <strong>MYSQL</strong><br>
+                            Database for employee records and logs.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hud-card" style="margin-top: 2rem;">
+                    <h3>// SYSTEM_DEMO</h3>
+                    <img src="assets/hypersafety.gif" alt="HyperSafety Demo"
+                        style="width: 100%; border: 1px solid var(--accent-dark-cyan);">
+                </div>
+
+                <div class="hud-card" style="margin-top: 2rem;">
+                    <h3>// REPOSITORIES</h3>
+                    <div class="repo-links"
+                        style="margin-top: 0; border: none; padding: 0; background: none; display: flex; flex-direction: column; gap: 1rem;">
+                        <a href="https://github.com/ritviksharma4/HyperSafety_Frontend" target="_blank"
+                            class="btn-link">
+                            <i class="fab fa-github"></i> FRONTEND >>
+                        </a>
+                        <a href="https://github.com/ViVek6301/HyperSafety_Backend" target="_blank" class="btn-link">
+                            <i class="fab fa-github"></i> BACKEND >>
+                        </a>
+                        <a href="https://github.com/ritviksharma4/HyperSafety_Service" target="_blank" class="btn-link">
+                            <i class="fab fa-github"></i> ML SERVICE >>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>SYSTEM_ID: STEVE_ABY_TONIO // COPYRIGHT 2025 // END_OF_LINE</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

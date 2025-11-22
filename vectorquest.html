@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODULE: VECTOR_QUEST // STEVE.DEV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Page specific overrides */
+        .project-header {
+            margin-top: 100px;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 100px;
+            left: 50px;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-family: var(--font-tech);
+            font-size: 1.2rem;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--neon-glow);
+            transform: translateX(-5px);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .tech-list {
+            list-style: none;
+        }
+
+        .tech-list li {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--accent-dark-cyan);
+            padding-bottom: 0.5rem;
+        }
+
+        .tech-list strong {
+            color: var(--neon-glow);
+            font-family: var(--font-tech);
+        }
+
+        .paper-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-family: var(--font-tech);
+            transition: all 0.3s;
+        }
+
+        .paper-link:hover {
+            background: rgba(69, 162, 158, 0.1);
+            box-shadow: 0 0 10px rgba(69, 162, 158, 0.2);
+            color: var(--neon-glow);
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .back-link {
+                position: static;
+                margin-bottom: 2rem;
+                display: inline-flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Grid -->
+    <div class="bg-grid"></div>
+    <div class="scanline"></div>
+
+    <nav class="hud-nav">
+        <div class="logo">[ STEVE.DEV ]</div>
+        <ul class="nav-links">
+            <li><a href="index.html#hero" data-text="HOME">HOME</a></li>
+            <li><a href="index.html#projects" data-text="PROJECTS">PROJECTS</a></li>
+            <li><a href="index.html#contact" class="cta-btn">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="index.html#projects" class="back-link"><i class="fas fa-chevron-left"></i> RETURN_TO_BASE</a>
+
+        <header class="project-header">
+            <h1 class="glitch" data-text="VECTOR QUEST">VECTOR QUEST</h1>
+            <h2 class="subtitle">STATUS: <span class="highlight">PUBLISHED RESEARCH</span></h2>
+        </header>
+
+        <div class="content-grid">
+            <div class="main-content">
+                <div class="hud-card">
+                    <div class="card-decor top-left"></div>
+                    <div class="card-decor bottom-right"></div>
+                    <h3>// RESEARCH_ABSTRACT</h3>
+                    <p class="terminal-text">
+                        > DOMAIN: Open-Domain Question Answering (QA).<br>
+                        > PROBLEM: High latency in existing QA systems requiring user-provided context.<br>
+                        > SOLUTION: Optimized knowledge storage methodology.<br>
+                        > RESULT: 50x faster prediction speed with high accuracy.
+                    </p>
+                    <br>
+                    <p><strong>Vector Quest: A Faster and Better Open-Domain Question-Answering System</strong></p>
+                    <p>Open-domain Question Answering (QA) systems are designed to answer user questions using
+                        unrestricted knowledge. Unlike traditional systems that require users to provide a paragraph for
+                        context (similar to reading comprehension), Vector Quest enables users to ask questions without
+                        providing source material.</p>
+                    <p>We proposed a unique methodology for storing the model's knowledge, allowing us to predict
+                        answers <strong>50 times faster</strong> than existing systems. Our approach was compared
+                        against models working on SQuAD datasets and proved to be a superior alternative in terms of
+                        both accuracy and time complexity for open-domain scenarios.</p>
+
+                    <a href="https://link.springer.com/chapter/10.1007/978-3-031-88237-1_4" target="_blank"
+                        class="paper-link">
+                        <i class="fas fa-external-link-alt"></i> ACCESS_PUBLICATION_SOURCE >>
+                    </a>
+                </div>
+
+                <div class="hud-card" style="margin-top: 2rem;">
+                    <h3>// CERTIFICATION_LOG</h3>
+                    <img src="assets/VectorQuest.jpg" alt="Vector Quest Certificate"
+                        style="width: 100%; border: 1px solid var(--accent-dark-cyan); margin-top: 1rem;">
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="hud-card">
+                    <h3>// KEY_METRICS</h3>
+                    <ul class="tech-list">
+                        <li>
+                            <strong>SPEED_UP</strong><br>
+                            50x faster than existing baselines.
+                        </li>
+                        <li>
+                            <strong>DOMAIN</strong><br>
+                            Open-Domain QA (Unrestricted Knowledge).
+                        </li>
+                        <li>
+                            <strong>PUBLISHER</strong><br>
+                            Springer Nature.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hud-card" style="margin-top: 2rem;">
+                    <h3>// CITATION</h3>
+                    <p style="font-family: var(--font-tech); font-size: 0.8rem; color: #888;">
+                        Tonio, S.A., et al. (2025). Vector Quest: A Faster and Better Open-Domain Question-Answering
+                        System. In: Springer Proceedings.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>SYSTEM_ID: STEVE_ABY_TONIO // COPYRIGHT 2025 // END_OF_LINE</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
