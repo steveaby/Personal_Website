@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODULE: BUGCATCHER_JOEY // STEVE.DEV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Page specific overrides */
+        .project-header {
+            margin-top: 100px;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 100px;
+            left: 50px;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-family: var(--font-tech);
+            font-size: 1.2rem;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--neon-glow);
+            transform: translateX(-5px);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .tech-list {
+            list-style: none;
+        }
+
+        .tech-list li {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--accent-dark-cyan);
+            padding-bottom: 0.5rem;
+        }
+
+        .tech-list strong {
+            color: var(--neon-glow);
+            font-family: var(--font-tech);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(69, 162, 158, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .back-link {
+                position: static;
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+                display: inline-flex;
+            }
+
+            .project-header {
+                margin-top: 40px;
+                margin-bottom: 2rem;
+            }
+
+            .project-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .carousel-btn {
+                width: 30px !important;
+                height: 30px !important;
+                font-size: 0.8rem;
+            }
+
+            .carousel-indicators {
+                bottom: 5px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Grid -->
+    <div class="bg-grid"></div>
+    <div class="scanline"></div>
+
+    <nav class="hud-nav">
+        <div class="logo">[ STEVE.DEV ]</div>
+        <ul class="nav-links">
+            <li><a href="index.html#hero" data-text="HOME">HOME</a></li>
+            <li><a href="index.html#projects" data-text="PROJECTS">PROJECTS</a></li>
+            <li><a href="index.html#contact" class="cta-btn">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <a href="index.html#projects" class="back-link"><i class="fas fa-chevron-left"></i> RETURN_TO_BASE</a>
+
+        <header class="project-header">
+            <h1 class="glitch" data-text="BUGCATCHER JOEY">BUGCATCHER JOEY</h1>
+            <h2 class="subtitle">STATUS: <span class="highlight">DEPLOYED (HACKILLINOIS 2026)</span></h2>
+        </header>
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/ePYTo-qVyig?rel=0" title="BugCatcher Joey Demo"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+
+        <div class="content-grid">
+            <div class="main-content" style="min-width: 0;">
+                <div class="hud-card" style="margin-bottom: 2rem;">
+                    <div class="card-decor top-left"></div>
+                    <div class="card-decor bottom-right"></div>
+                    <h3>// MISSION_BRIEF</h3>
+                    <p class="terminal-text">
+                        > EVENT: HackIllinois 2026 (Feb 27 - Mar 1, 2026).<br>
+                        > DOMAIN: Artificial Intelligence & Competitive Pokémon.<br>
+                        > PROBLEM: Mathematical complexity of optimizing teams against the shifting Smogon OU
+                        metagame.<br>
+                        > SOLUTION: Automated AI evaluator using mathematical damage engines.
+                    </p>
+                    <br>
+                    <p><strong>BugCatcher Joey: AI Pokémon Meta Optimizer</strong></p>
+                    <p>Competitive Pokémon is a game of intense strategy, deep mathematical damage calculations, and
+                        predicting an ever-shifting metagame. BugCatcher Joey is an intelligent, high-performance AI
+                        Strategist that takes your favorite custom Pokémon team and rigorously stress tests it against
+                        the current top-tier Smogon OU metagame threats.</p>
+                    <p>Using a custom hybrid architecture combining a cutting-edge React frontend, a Python FastAPI
+                        loop, and a raw Node.js mathematical damage engine deployed to the cloud via Modal, the AI
+                        autonomously evaluates your roster's weaknesses and algorithmically iterates through optimal
+                        items, moves, EVs, and full roster swaps until your team is mathematically proven to counter the
+                        global meta!</p>
+                </div>
+
+                <div class="hud-card gallery-section">
+                    <h3>// SYSTEM_GALLERY</h3>
+                    <div class="carousel-container"
+                        style="position: relative; width: 100%; overflow: hidden; margin-top: 1rem; border: 1px solid var(--accent-dark-cyan);">
+                        <div class="carousel-track"
+                            style="display: flex; width: 100%; transition: transform 0.5s ease-in-out;">
+                            <img class="carousel-slide" src="assets/Bug_Home.jpg" alt="Home Screen"
+                                style="min-width: 100%; object-fit: contain; background: #0b0c10; aspect-ratio: 16/9;">
+                            <img class="carousel-slide" src="assets/Bug_Sim.jpg" alt="Simulation Screen"
+                                style="min-width: 100%; object-fit: contain; background: #0b0c10; aspect-ratio: 16/9;">
+                            <img class="carousel-slide" src="assets/Bug_Opti.jpg" alt="Optimization Screen"
+                                style="min-width: 100%; object-fit: contain; background: #0b0c10; aspect-ratio: 16/9;">
+                            <img class="carousel-slide" src="assets/Bug_Poke.jpg" alt="Pokemon Selection"
+                                style="min-width: 100%; object-fit: contain; background: #0b0c10; aspect-ratio: 16/9;">
+                            <img class="carousel-slide" src="assets/Bug_Item.jpg" alt="Item Selection"
+                                style="min-width: 100%; object-fit: contain; background: #0b0c10; aspect-ratio: 16/9;">
+                        </div>
+                        <button class="carousel-btn prev-btn"
+                            style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(11, 12, 16, 0.8); color: var(--neon-glow); border: 1px solid var(--accent-cyan); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: all 0.3s;"><i
+                                class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next-btn"
+                            style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(11, 12, 16, 0.8); color: var(--neon-glow); border: 1px solid var(--accent-cyan); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: all 0.3s;"><i
+                                class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-indicators"
+                            style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10;">
+                            <span class="dot active"
+                                style="width: 10px; height: 10px; border-radius: 50%; background: var(--accent-cyan); opacity: 1; cursor: pointer; transition: all 0.3s; border: 1px solid var(--bg-color);"></span>
+                            <span class="dot"
+                                style="width: 10px; height: 10px; border-radius: 50%; background: #fff; opacity: 0.5; cursor: pointer; transition: all 0.3s; border: 1px solid var(--bg-color);"></span>
+                            <span class="dot"
+                                style="width: 10px; height: 10px; border-radius: 50%; background: #fff; opacity: 0.5; cursor: pointer; transition: all 0.3s; border: 1px solid var(--bg-color);"></span>
+                            <span class="dot"
+                                style="width: 10px; height: 10px; border-radius: 50%; background: #fff; opacity: 0.5; cursor: pointer; transition: all 0.3s; border: 1px solid var(--bg-color);"></span>
+                            <span class="dot"
+                                style="width: 10px; height: 10px; border-radius: 50%; background: #fff; opacity: 0.5; cursor: pointer; transition: all 0.3s; border: 1px solid var(--bg-color);"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sidebar">
+                <div class="hud-card">
+                    <h3>// TECH_STACK</h3>
+                    <ul class="tech-list">
+                        <li>
+                            <strong>REACT & VITE</strong><br>
+                            Frontend glassmorphism UI with Framer Motion.
+                        </li>
+                        <li>
+                            <strong>PYTHON (FASTAPI)</strong><br>
+                            Backend Serverless API loop via SSE Streams.
+                        </li>
+                        <li>
+                            <strong>NODE.JS</strong><br>
+                            Smogon math calculation engine (@smogon/calc).
+                        </li>
+                        <li>
+                            <strong>MODAL CLOUD</strong><br>
+                            Serverless Cloud Containers infrastructure.
+                        </li>
+                        <li>
+                            <strong>OPENROUTER</strong><br>
+                            LLM Strategist engine.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hud-card" style="margin-top: 2rem;">
+                    <h3>// TEAM</h3>
+                    <ul class="tech-list" style="margin-bottom: 0;">
+                        <li>
+                            <strong>STEVE ABY TONIO</strong>
+                        </li>
+                        <li>
+                            <strong>CHINMAY DANDEKAR</strong>
+                        </li>
+                        <li>
+                            <strong>PRANAV PREMCHAND</strong>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hud-card" style="margin-top: 2rem;">
+                    <h3>// REPOSITORY</h3>
+                    <a href="https://github.com/ChinDandekar/bugcatcherjoey" target="_blank" class="btn-link">
+                        <i class="fab fa-github"></i> ACCESS_SOURCE_CODE >>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>SYSTEM_ID: STEVE_ABY_TONIO // COPYRIGHT 2026 // END_OF_LINE</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const nextButton = document.querySelector('.next-btn');
+            const prevButton = document.querySelector('.prev-btn');
+            const dots = Array.from(document.querySelectorAll('.dot'));
+
+            let currentIndex = 0;
+
+            const updateCarousel = (index) => {
+                track.style.transform = `translateX(-${index * 100}%)`;
+                dots.forEach(dot => {
+                    dot.style.opacity = '0.5';
+                    dot.classList.remove('active');
+                });
+                dots[index].style.opacity = '1';
+                dots[index].classList.add('active');
+            };
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel(currentIndex);
+            });
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel(currentIndex);
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel(currentIndex);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
