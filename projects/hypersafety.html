@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperSafety // In-Depth Technical Case Study — Steve Aby Tonio</title>
+  <meta name="description"
+    content="Detailed technical case study of HyperSafety: Enterprise Workplace Safety & Mask Compliance Telemetry with Real-Time PyTorch Lightning CNN & Dlib Facial Recognition built by Steve Aby Tonio.">
+  <meta name="author" content="Steve Aby Tonio">
+  <meta name="theme-color" content="#030407">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:site_name" content="Steve Aby Tonio Portfolio">
+  <meta property="og:title" content="HyperSafety // In-Depth Technical Case Study — Steve Aby Tonio">
+  <meta property="og:description" content="Enterprise workplace safety compliance system combining an edge PyTorch Lightning CNN (98.95% accuracy) with Dlib facial recognition, Node.js API, and Flutter.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="../assets/hypersafety/HyperSafety_Diagram.png">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HyperSafety // In-Depth Technical Case Study">
+  <meta name="twitter:description" content="Enterprise workplace safety compliance system with PyTorch Lightning CNN, Dlib facial recognition, and Flutter mobile client.">
+  <meta name="twitter:image" content="../assets/hypersafety/HyperSafety_Diagram.png">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="project-detail-body">
+  <!-- Background Elements -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grid-bg-overlay"></div>
+  <div class="radial-glow-top"></div>
+  <div class="scanline"></div>
+
+  <!-- HUD Corner Brackets -->
+  <div class="hud-corner top-left"></div>
+  <div class="hud-corner top-right"></div>
+  <div class="hud-corner bottom-left"></div>
+  <div class="hud-corner bottom-right"></div>
+
+  <!-- Navigation Header -->
+  <header class="project-page-header">
+    <div class="project-page-nav-container">
+      <a href="../index.html" class="back-btn" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-chevron-left"></i> // RETURN_TO_BASE
+      </a>
+
+      <a href="../index.html" class="nav-logo" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <img src="../assets/favicon.svg" alt="Logo" class="nav-logo-icon">
+        <span>STEVE<span class="dot">.DEV</span></span>
+      </a>
+
+      <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+        <a href="https://github.com/ritviksharma4/HyperSafety_Frontend.git" target="_blank" class="cyber-btn cyber-btn-sm">
+          <i class="fab fa-github"></i> <span>FRONTEND REPO</span>
+        </a>
+        <a href="https://github.com/ViVek6301/HyperSafety_Backend.git" target="_blank" class="cyber-btn cyber-btn-sm">
+          <i class="fab fa-github"></i> <span>BACKEND REPO</span>
+        </a>
+        <a href="https://github.com/ritviksharma4/HyperSafety_Service.git" target="_blank" class="cyber-btn cyber-btn-sm">
+          <i class="fab fa-github"></i> <span>ML SERVICE REPO</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Hero Section -->
+  <main class="project-hero-section">
+    <div class="project-hero-badge-row">
+      <span class="project-category-badge">COMPUTER VISION ML</span>
+      <span class="project-tag">TRI-SERVICE MICROSERVICE ARCHITECTURE</span>
+      <a href="../aceneutrino.html" class="project-tag" style="border-color: rgba(245, 158, 11, 0.5); color: #fbbf24; text-decoration: none;">
+        <i class="fas fa-atom"></i> TEAM: ACE NEUTRINO
+      </a>
+      <span class="project-tag" style="border-color: rgba(0, 243, 255, 0.4); color: var(--cyan);"><i class="fas fa-eye"></i> PYTORCH LIGHTNING & DLIB</span>
+    </div>
+
+    <h1 class="project-hero-title">HyperSafety</h1>
+    <p class="project-hero-tagline">
+      Enterprise employee safety compliance system combining an edge Computer Vision ML Service (PyTorch Lightning 4-layer CNN with 98.95% accuracy and Dlib 128D facial embeddings), a Node.js/MySQL REST API with Imgur cloud storage, and a cross-platform Flutter mobile client.
+    </p>
+
+    <!-- Telemetry Metrics Strip -->
+    <div class="modal-metrics-grid" style="margin-bottom: 2rem;">
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">98.95%</div>
+        <div class="modal-metric-lbl">PyTorch CNN Mask Accuracy</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">128D Vectors</div>
+        <div class="modal-metric-lbl">Dlib Facial Recognition Embeddings</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">3 Services</div>
+        <div class="modal-metric-lbl">Flutter UI + Node.js API + ML Worker</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">Zero Touch</div>
+        <div class="modal-metric-lbl">Automated Violation Warning Logs</div>
+      </div>
+    </div>
+
+    <div class="project-hero-actions">
+      <a href="../aceneutrino.html" class="cyber-btn" style="border-color: #fbbf24; color: #fbbf24; background: rgba(245, 158, 11, 0.08);">
+        <i class="fas fa-users"></i> TEAM ACE NEUTRINO
+      </a>
+      <a href="https://github.com/ritviksharma4/HyperSafety_Frontend.git" target="_blank" class="cyber-btn cyber-btn-secondary">
+        <i class="fab fa-github"></i> FLUTTER FRONTEND
+      </a>
+      <a href="https://github.com/ViVek6301/HyperSafety_Backend.git" target="_blank" class="cyber-btn cyber-btn-secondary">
+        <i class="fab fa-github"></i> NODE.JS BACKEND
+      </a>
+      <a href="https://github.com/ritviksharma4/HyperSafety_Service.git" target="_blank" class="cyber-btn cyber-btn-secondary">
+        <i class="fab fa-github"></i> ML VISION SERVICE
+      </a>
+      <a href="../index.html#projects" class="cyber-btn cyber-btn-secondary" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-grid-2"></i> ALL PROJECTS
+      </a>
+    </div>
+
+    <!-- Screenshot & Diagram Gallery Showcase -->
+    <section class="project-gallery-section">
+      <div class="case-study-header">
+        <i class="fas fa-camera"></i> // ARCHITECTURE_SCHEMATICS_&_LIVE_DEMO
+      </div>
+
+      <div class="project-gallery-grid">
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap" style="aspect-ratio: 16/10; background: #080c14; padding: 10px;">
+            <img src="../assets/hypersafety/HyperSafety_Diagram.png" alt="HyperSafety End-to-End System Architecture" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>System Architecture Diagram:</strong> Live video ingestion, OpenCV SSD face localization, PyTorch Lightning CNN mask classification, Dlib employee identification, Node.js REST API, and Flutter admin dashboard.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap" style="aspect-ratio: 16/10;">
+            <img src="../assets/hypersafety/hypersafety.gif" alt="Real-Time Face Mask Detection Inference" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Edge Video Stream Inference:</strong> Real-time bounding box tracking, binary classification (Mask / No Mask), confidence scoring, and instantaneous employee identity lookup.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Dive Technical Content -->
+    <div class="case-study-content">
+      <!-- 01. Overview & Motivation -->
+      <article class="case-study-card featured">
+        <div class="case-study-header">
+          <i class="fas fa-bullseye"></i> 01 // OVERVIEW_&_MOTIVATION
+        </div>
+        <div class="case-study-body">
+          <p>
+            In healthcare facilities, research laboratories, manufacturing cleanrooms, and corporate offices, ensuring Personal Protective Equipment (PPE) compliance—specifically face mask adherence—is vital for biosecurity and occupational safety.
+          </p>
+          <p>
+            Manual compliance monitoring is labor-intensive, inconsistent, and impractical across large facilities. <strong>HyperSafety</strong> automates this workflow end-to-end: surveillance cameras continuously analyze video feeds, isolate human faces using deep learning Single Shot MultiBox Detectors (SSD), evaluate mask compliance via a custom 4-layer CNN, and cross-reference facial landmarks against employee records using 128-dimensional Euclidean embeddings to log violation warnings automatically in MySQL and push live alerts to supervisors via Flutter.
+          </p>
+        </div>
+      </article>
+
+      <!-- 02. Tri-Service Architecture -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-network-wired"></i> 02 // TRI-SERVICE_MICROSERVICE_ARCHITECTURE
+        </div>
+        <div class="case-study-body">
+          <p>
+            HyperSafety is engineered as a decoupled tri-service ecosystem spanning three repositories:
+          </p>
+          <ul class="modal-feature-list" style="margin: 1rem 0;">
+            <li class="modal-feature-item">
+              <strong>1. Edge ML Vision Service (Python, PyTorch Lightning, OpenCV, Dlib):</strong>
+              Processes video streams (live RTSP or video files via <code>sk-video</code>/<code>cv2</code>). Implements a two-stage computer vision pipeline: first localizing faces with a Caffe-based ResNet-10 SSD face detector (<code>res10_300x300_ssd</code>), then feeding cropped regions through a custom PyTorch Lightning <code>MaskDetector</code> CNN. Unmasked faces are identified using Dlib 128D facial feature vectors before dispatching HTTP/Socket events to the backend.
+            </li>
+            <li class="modal-feature-item">
+              <strong>2. Backend Telemetry Hub (Node.js, Express, MySQL, Imgur API):</strong>
+              RESTful microservice running on port 7090. Manages administrative authentication via JWT, maintains an <code>Employees</code> relational schema in MySQL with warning counts and <code>LastWarned</code> timestamps, and features an automated Imgur OAuth token refresh worker (<code>updateImgurAccessToken.js</code>) to host employee avatar photographs in cloud storage.
+            </li>
+            <li class="modal-feature-item">
+              <strong>3. Mobile Supervision Client (Flutter & Dart):</strong>
+              Cross-platform mobile application for facility managers. Features real-time employee compliance scorecards, photo capture via camera/gallery for onboarding new staff, warning count resets, employee deletion with administrative confirmations, and live incident telemetry.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 03. Core Engineering Highlights -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-microchip"></i> 03 // CORE_ENGINEERING_&_ALGORITHMIC_HIGHLIGHTS
+        </div>
+        <div class="case-study-body">
+          <ul class="modal-feature-list">
+            <li class="modal-feature-item">
+              <strong>Custom 4-Layer PyTorch Lightning CNN:</strong> Built with sequential <code>Conv2d</code> (32/64/128/256 feature maps), <code>ReLU</code> activations, <code>MaxPool2d</code> pooling, and <code>Linear</code> classification heads, trained with <code>Adam</code> optimization to achieve 98.95% validation accuracy.
+            </li>
+            <li class="modal-feature-item">
+              <strong>128-Dimensional Dlib Facial Recognition:</strong> Computes deep metric facial embeddings for registered staff and performs real-time Euclidean distance nearest-neighbor matching to identify unmasked personnel instantly.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Two-Stage Edge Pipeline:</strong> Decouples face localization (SSD ResNet-10 Caffe model) from mask classification and identity recognition, minimizing compute overhead on high-framerate video feeds.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Automated Cloud Image Lifecycle:</strong> Integrates Imgur REST APIs with automated background OAuth token rotation for scalable, zero-maintenance storage of employee reference photographs.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 04. Technical Specifications -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-cubes"></i> 04 // TECHNICAL_SPECIFICATIONS_&_REPOSITORY_ACCESS
+        </div>
+        <div class="tech-spec-grid">
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// COMPUTER_VISION_&_ML</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">Python 3.9</span>
+              <span class="project-tag">PyTorch Lightning (v1.2.10)</span>
+              <span class="project-tag">Torchvision</span>
+              <span class="project-tag">OpenCV (cv2)</span>
+              <span class="project-tag">Dlib (128D Embeddings)</span>
+              <span class="project-tag">SSD ResNet-10</span>
+              <span class="project-tag">sk-video & FFmpeg</span>
+              <span class="project-tag">Scikit-Learn</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// BACKEND_&_STORAGE</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">Express.js</span>
+              <span class="project-tag">MySQL Database</span>
+              <span class="project-tag">JWT Authentication</span>
+              <span class="project-tag">Imgur Cloud API</span>
+              <span class="project-tag">Morgan Logger</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// MOBILE_FRONTEND</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">Flutter SDK</span>
+              <span class="project-tag">Dart</span>
+              <span class="project-tag">Material UI</span>
+              <span class="project-tag">Image Picker</span>
+              <span class="project-tag">Provider State</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// REPOSITORIES_&_CONTRIBUTORS</div>
+            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--cyan); line-height: 1.6; margin-bottom: 8px;">
+              • <a href="https://github.com/ritviksharma4/HyperSafety_Frontend.git" target="_blank" style="color: var(--cyan);">HyperSafety_Frontend (GitHub)</a><br>
+              • <a href="https://github.com/ViVek6301/HyperSafety_Backend.git" target="_blank" style="color: var(--cyan);">HyperSafety_Backend (GitHub)</a><br>
+              • <a href="https://github.com/ritviksharma4/HyperSafety_Service.git" target="_blank" style="color: var(--cyan);">HyperSafety_Service (GitHub)</a>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; line-height: 1.6;">
+              Team: <a href="../aceneutrino.html" style="color: var(--cyan); font-weight: 700; text-decoration: underline; text-underline-offset: 3px;">Ace Neutrino</a> (Steve Aby Tonio, Ritvik Sharma, Vivek Nichani, Akul Jain, Harsh Ambasta) &bull; <a href="../aceneutrino.html" style="color: #fbbf24; font-size: 0.76rem; font-weight: 600;">[VIEW TEAM ARCHIVE &rarr;]</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Project Pagination Footer -->
+  <footer class="project-pagination-footer">
+    <div class="project-pagination-container">
+      <a href="illiniride.html" class="pagination-link prev">
+        <span class="pagination-sub">&larr; PREVIOUS MODULE</span>
+        <span class="pagination-title">IlliniRide (Campus Carpooling)</span>
+      </a>
+
+      <a href="../index.html#projects" class="cyber-btn cyber-btn-sm" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-th"></i> ALL PROJECTS
+      </a>
+
+      <a href="vectorquest.html" class="pagination-link next" style="text-align: right;">
+        <span class="pagination-sub">NEXT MODULE &rarr;</span>
+        <span class="pagination-title">VectorQuest (Springer Nature)</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

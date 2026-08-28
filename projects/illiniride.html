@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IlliniRide // In-Depth Technical Case Study — Steve Aby Tonio</title>
+  <meta name="description"
+    content="Detailed technical case study of IlliniRide: High-Performance Campus Ridesharing Platform built with Raw MySQL Stored Procedures, Triggers, and ACID Transactions by Steve Aby Tonio.">
+  <meta name="author" content="Steve Aby Tonio">
+  <meta name="theme-color" content="#030407">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:site_name" content="Steve Aby Tonio Portfolio">
+  <meta property="og:title" content="IlliniRide // In-Depth Technical Case Study — Steve Aby Tonio">
+  <meta property="og:description" content="High-performance campus ridesharing platform built with raw MySQL 8.0 stored procedures, triggers, and serializable ACID transactions.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="../assets/illiniride/search_rides.png">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IlliniRide // In-Depth Technical Case Study">
+  <meta name="twitter:description" content="High-performance campus ridesharing platform built with raw MySQL 8.0 stored procedures and ACID transactions.">
+  <meta name="twitter:image" content="../assets/illiniride/search_rides.png">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="project-detail-body">
+  <!-- Background Elements -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grid-bg-overlay"></div>
+  <div class="radial-glow-top"></div>
+  <div class="scanline"></div>
+
+  <!-- HUD Corner Brackets -->
+  <div class="hud-corner top-left"></div>
+  <div class="hud-corner top-right"></div>
+  <div class="hud-corner bottom-left"></div>
+  <div class="hud-corner bottom-right"></div>
+
+  <!-- Navigation Header -->
+  <header class="project-page-header">
+    <div class="project-page-nav-container">
+      <a href="../index.html" class="back-btn" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-chevron-left"></i> // RETURN_TO_BASE
+      </a>
+
+      <a href="../index.html" class="nav-logo" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <img src="../assets/favicon.svg" alt="Logo" class="nav-logo-icon">
+        <span>STEVE<span class="dot">.DEV</span></span>
+      </a>
+
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <a href="https://github.com/steveaby/IlliniRide" target="_blank" class="cyber-btn cyber-btn-sm">
+          <i class="fab fa-github"></i> <span>SOURCE CODE</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Hero Section -->
+  <main class="project-hero-section">
+    <div class="project-hero-badge-row">
+      <span class="project-category-badge">UIUC CS</span>
+      <span class="project-tag">RELATIONAL DATABASE & CAMPUS CARPOOLING</span>
+      <span class="project-tag" style="border-color: rgba(0, 243, 255, 0.4); color: var(--cyan);"><i class="fas fa-database"></i> MYSQL ADVANCED PROCEDURES</span>
+    </div>
+
+    <h1 class="project-hero-title">IlliniRide</h1>
+    <p class="project-hero-tagline">
+      High-performance campus ridesharing platform built with raw MySQL 8.0 stored procedures, triggers, and serializable ACID transactions for automated geospatial distance pricing, instant driver rating recalculation, and safe seat booking without ORM latency.
+    </p>
+
+    <!-- Telemetry Metrics Strip -->
+    <div class="modal-metrics-grid" style="margin-bottom: 2rem;">
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">0ms Overhead</div>
+        <div class="modal-metric-lbl">Raw SQL Execution (Zero ORM)</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">Serializable</div>
+        <div class="modal-metric-lbl">ACID Transaction Seat Booking</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">Geo-Pricing</div>
+        <div class="modal-metric-lbl">Stored Procedure Distance Formula</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">Auto-Trigger</div>
+        <div class="modal-metric-lbl">Aggregate Driver Star Ratings</div>
+      </div>
+    </div>
+
+    <div class="project-hero-actions">
+      <a href="https://github.com/steveaby/IlliniRide" target="_blank" class="cyber-btn">
+        <i class="fab fa-github"></i> ACCESS GITHUB REPOSITORY
+      </a>
+      <a href="../index.html#projects" class="cyber-btn cyber-btn-secondary">
+        <i class="fas fa-grid-2"></i> EXPLORE ALL PROJECTS
+      </a>
+    </div>
+
+    <!-- Screenshot Gallery Showcase -->
+    <section class="project-gallery-section">
+      <div class="case-study-header">
+        <i class="fas fa-camera"></i> // INTERACTIVE_SYSTEM_SCREENSHOTS
+      </div>
+
+      <div class="project-gallery-grid">
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/illiniride/search_rides.png" alt="Ride Search Interface" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Ride Search & Live Availability:</strong> Filter campus carpools by origin, destination city, departure date, and real-time seat availability.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/illiniride/booking_confirmation.png" alt="Booking Confirmation Flow" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Transactional Booking Flow:</strong> Vehicle specs, driver reputation, cost breakdown, and safe ACID transaction execution.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/illiniride/offer_ride.png" alt="Offer a Ride" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Publish Route & Dynamic Price Suggestion:</strong> Stored procedure distance calculation recommends fair trip prices.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/illiniride/published_rides.png" alt="Driver Dashboard" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Driver Dashboard:</strong> Manage offered routes, view departure timetables, monitor seat occupancies, and check status.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/illiniride/my_trips.png" alt="Rider Dashboard" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Rider Itinerary & Bookings:</strong> Complete trip management with transaction safety, seat modifications, and cancellations.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/illiniride/review_driver.png" alt="Driver Review" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Driver Review Flow:</strong> Star rating submission with automatic database trigger aggregate score recalculation.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Dive Technical Content -->
+    <div class="case-study-content">
+      <!-- 01. Overview & Motivation -->
+      <article class="case-study-card featured">
+        <div class="case-study-header">
+          <i class="fas fa-bullseye"></i> 01 // OVERVIEW_&_MOTIVATION
+        </div>
+        <div class="case-study-body">
+          <p>
+            Commuting between the University of Illinois Urbana-Champaign (UIUC) and major hubs like Chicago, O'Hare International Airport (ORD), and surrounding suburbs is a frequent challenge for students and faculty. Commercial rideshares are expensive, and public buses follow rigid schedules.
+          </p>
+          <p>
+            <strong>IlliniRide</strong> is a dedicated campus carpooling web platform designed to connect verified student drivers with riders traveling the same route to share rides, split travel expenses, and reduce transit friction safely.
+          </p>
+        </div>
+      </article>
+
+      <!-- 02. System Architecture -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-network-wired"></i> 02 // DATABASE_ARCHITECTURE_&_ADVANCED_PROGRAMS
+        </div>
+        <div class="case-study-body">
+          <p>
+            Unlike typical apps that rely on bulky ORM layers, IlliniRide connects Node.js directly to a normalized MySQL 8.0 database engine executing compiled stored procedures and triggers for mission-critical operations:
+          </p>
+          <ul class="modal-feature-list" style="margin: 1rem 0;">
+            <li class="modal-feature-item">
+              <strong>Geospatial Dynamic Pricing Procedure (<code>sp_post_ride_with_suggested_price</code>):</strong> Computes coordinate distance between origin and destination cities in SQL and applies dynamic gas/distance formulas to recommend fair base prices.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Serializable Seat Booking Transaction (<code>sp_book_ride_transaction</code>):</strong> Executes booking creation within an ACID serializable transaction block, verifying vehicle seat capacity and preventing race-condition double bookings.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Automated Rating Recomputation Trigger (<code>trg_reviews_after_insert_update_user_rating</code>):</strong> Fires automatically upon review insertion to recalculate the reviewee's average rating in the <code>Users</code> table.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Relational Schema Normalization:</strong> 6 interconnected entities (<code>Users</code>, <code>Vehicles</code>, <code>Cities</code>, <code>Rides</code>, <code>Bookings</code>, <code>Reviews</code>) with foreign key cascading and consistency constraints.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 03. Core Engineering Highlights -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-microchip"></i> 03 // CORE_ENGINEERING_HIGHLIGHTS
+        </div>
+        <div class="case-study-body">
+          <ul class="modal-feature-list">
+            <li class="modal-feature-item">
+              <strong>Zero-ORM Latency Overhead:</strong> Direct execution of raw SQL queries via Node.js eliminates ORM mapping overhead and gives exact control over query execution plans.
+            </li>
+            <li class="modal-feature-item">
+              <strong>ACID Concurrency Protection:</strong> Prevents overbooking scenarios when multiple riders attempt to reserve the last available seat simultaneously.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Full CRUD Capabilities:</strong> Comprehensive management interfaces for drivers to update vehicle details, publish routes, and riders to modify seat counts or cancel trips.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Cleaned Real-World Datasets:</strong> Pre-populated with verified Illinois city coordinate datasets and realistic commute itineraries.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 04. Technical Specifications -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-cubes"></i> 04 // TECHNICAL_SPECIFICATIONS
+        </div>
+        <div class="tech-spec-grid">
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// DATABASE_ENGINE</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">MySQL 8.0+</span>
+              <span class="project-tag">Stored Procedures</span>
+              <span class="project-tag">Triggers</span>
+              <span class="project-tag">ACID Transactions</span>
+              <span class="project-tag">Serializable Isolation</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// BACKEND_&_API</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">HTTP Server</span>
+              <span class="project-tag">Child Process Raw SQL</span>
+              <span class="project-tag">RESTful Architecture</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// FRONTEND</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">Vanilla JavaScript (ES6+)</span>
+              <span class="project-tag">HTML5 Semantic Markup</span>
+              <span class="project-tag">CSS3 (Sci-Fi HUD Theme)</span>
+              <span class="project-tag">Responsive Grid</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// TEAM_INFORMATION</div>
+            <div style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-main); margin-top: 0.5rem;">
+              Steve Aby Tonio (Captain)  •  Harshita Ketharaman  •  Keshav Rampratap Soni
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Project Pagination Footer -->
+  <footer class="project-pagination-footer">
+    <div class="project-pagination-container">
+      <a href="reserve.html" class="pagination-link prev">
+        <span class="pagination-sub">&larr; PREVIOUS MODULE</span>
+        <span class="pagination-title">ReServe (Campus Sustainability)</span>
+      </a>
+
+      <a href="../index.html#projects" class="cyber-btn cyber-btn-sm" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-th"></i> ALL PROJECTS
+      </a>
+
+      <a href="hypersafety.html" class="pagination-link next" style="text-align: right;">
+        <span class="pagination-sub">NEXT MODULE &rarr;</span>
+        <span class="pagination-title">HyperSafety (Computer Vision)</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

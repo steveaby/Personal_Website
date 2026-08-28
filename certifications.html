@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications & Credentials // Steve Aby Tonio</title>
+  <meta name="description"
+    content="Official certifications and verified industry credentials of Steve Aby Tonio: Salesforce Certified Marketing Cloud Email Specialist, AI Associate, Agentforce Specialist, Oracle Database, Python, and Banking.">
+  <meta name="author" content="Steve Aby Tonio">
+  <meta name="theme-color" content="#030407">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:site_name" content="Steve Aby Tonio Portfolio">
+  <meta property="og:title" content="Certifications & Credentials // Steve Aby Tonio">
+  <meta property="og:description"
+    content="Official certifications in Salesforce (Marketing Cloud, AI Associate, Agentforce), Oracle Database, Python Computing, and Professional Business Banking.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/certifications/salesforce/salesforce_agentforce_specialist.png">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Certifications & Credentials // Steve Aby Tonio">
+  <meta name="twitter:description"
+    content="Official certifications in Salesforce, Oracle Database, Python Computing, and Professional Business Banking.">
+  <meta name="twitter:image" content="assets/certifications/salesforce/salesforce_agentforce_specialist.png">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="project-detail-body">
+  <!-- Background Canvas & Grid Overlay -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grid-bg-overlay"></div>
+  <div class="radial-glow-top"></div>
+  <div class="scanline"></div>
+
+  <!-- HUD Corner Brackets -->
+  <div class="hud-corner top-left"></div>
+  <div class="hud-corner top-right"></div>
+  <div class="hud-corner bottom-left"></div>
+  <div class="hud-corner bottom-right"></div>
+
+  <!-- Navigation Header -->
+  <header class="project-page-header">
+    <div class="project-page-nav-container">
+      <a href="index.html" class="back-btn" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-chevron-left"></i> // RETURN_TO_BASE
+      </a>
+
+      <a href="index.html" class="nav-logo" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <img src="assets/favicon.svg" alt="Logo" class="nav-logo-icon">
+        <span>STEVE<span class="dot">.DEV</span></span>
+      </a>
+
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button class="cmd-k-trigger" aria-label="Open command palette">
+          <span class="cmd-k-key">⌘K</span> <span class="cmd-k-text">COMMANDS</span>
+        </button>
+        <button class="cyber-btn cyber-btn-sm btn-open-resume">
+          <i class="fas fa-file-pdf"></i> <span>RESUME</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <main class="project-hero-section">
+    <div class="project-hero-badge-row">
+      <span class="project-category-badge">VERIFIED CREDENTIALS</span>
+      <span class="project-tag">INDUSTRY CERTIFICATIONS & ACADEMIC DISTINCTIONS</span>
+      <span class="project-tag" style="border-color: rgba(74, 222, 128, 0.4); color: #4ade80;">
+        <i class="fas fa-shield-check"></i> 9 VERIFIED CREDENTIALS
+      </span>
+    </div>
+
+    <h1 class="project-hero-title">Certifications & Honors</h1>
+    <p class="project-hero-tagline">
+      Formal credentials spanning Salesforce Enterprise CRM & AI, Oracle Relational Database Foundations, Python Algorithm Computing, and Financial Banking Operations.
+    </p>
+
+    <!-- Telemetry Metrics Strip -->
+    <div class="modal-metrics-grid" style="margin-bottom: 2.5rem;">
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">3x Certified</div>
+        <div class="modal-metric-lbl">Salesforce Official Credentials</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">Oracle Academy</div>
+        <div class="modal-metric-lbl">Database Foundations Final Exam</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">NPTEL / IIT</div>
+        <div class="modal-metric-lbl">Python Computing Certification</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">Banking & Finance</div>
+        <div class="modal-metric-lbl">Barclays Financial Mastery</div>
+      </div>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="skills-filter-group" style="margin-bottom: 2.5rem;">
+      <button class="filter-btn cert-filter-btn active" data-cert-filter="all">ALL CREDENTIALS (9)</button>
+      <button class="filter-btn cert-filter-btn" data-cert-filter="salesforce">SALESFORCE & AI</button>
+      <button class="filter-btn cert-filter-btn" data-cert-filter="database">DATABASES & ORACLE</button>
+      <button class="filter-btn cert-filter-btn" data-cert-filter="python">PYTHON & CS</button>
+      <button class="filter-btn cert-filter-btn" data-cert-filter="business">BANKING & BUSINESS</button>
+    </div>
+
+    <!-- Certifications Grid -->
+    <section class="project-gallery-section">
+      <div class="project-gallery-grid" id="cert-grid">
+
+        <!-- 1. Salesforce Marketing Cloud Email Specialist -->
+        <div class="gallery-card cert-card" data-category="salesforce">
+          <div class="gallery-card-img-wrap" style="aspect-ratio: 16/11; background: #070a10;">
+            <img src="assets/certifications/salesforce/salesforce_marketing_cloud_email_specialist.png"
+              alt="Salesforce Certified Marketing Cloud Email Specialist" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span class="project-tag" style="font-size: 0.68rem; border-color: var(--border-cyan); color: var(--cyan);">SALESFORCE</span>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">Dec 21, 2024</span>
+            </div>
+            <strong style="font-size: 0.95rem; color: var(--text-main); display: block; margin-bottom: 4px;">Salesforce Certified Marketing Cloud Email Specialist</strong>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">Credential ID: 5501094 // Enterprise automation, AMPscript, data extensions & SQL subscriber segmentation.</div>
+            <div class="cert-card-actions">
+              <a href="assets/certifications/salesforce/salesforce_marketing_cloud_email_specialist.pdf" target="_blank" class="cyber-btn cyber-btn-sm" style="padding: 6px 14px; font-size: 0.75rem;">
+                <i class="fas fa-file-pdf"></i> OPEN PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Salesforce Agentforce Specialist -->
+        <div class="gallery-card cert-card" data-category="salesforce">
+          <div class="gallery-card-img-wrap" style="aspect-ratio: 16/11; background: #070a10;">
+            <img src="assets/certifications/salesforce/salesforce_agentforce_specialist.png"
+              alt="Salesforce Certified Agentforce Specialist" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span class="project-tag" style="font-size: 0.68rem; border-color: var(--border-cyan); color: var(--cyan);">SALESFORCE</span>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">Feb 08, 2025</span>
+            </div>
+            <strong style="font-size: 0.95rem; color: var(--text-main); display: block; margin-bottom: 4px;">Salesforce Certified Agentforce Specialist</strong>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">Credential ID: 5754768 // Autonomous AI agents, prompt engineering, agent actions & trust architecture.</div>
+            <div class="cert-card-actions">
+              <a href="assets/certifications/salesforce/salesforce_agentforce_specialist.pdf" target="_blank" class="cyber-btn cyber-btn-sm" style="padding: 6px 14px; font-size: 0.75rem;">
+                <i class="fas fa-file-pdf"></i> OPEN PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Salesforce AI Associate -->
+        <div class="gallery-card cert-card" data-category="salesforce">
+          <div class="gallery-card-img-wrap" style="aspect-ratio: 16/11; background: #070a10;">
+            <img src="assets/certifications/salesforce/salesforce_ai_associate.png"
+              alt="Salesforce Certified AI Associate" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span class="project-tag" style="font-size: 0.68rem; border-color: var(--border-cyan); color: var(--cyan);">SALESFORCE</span>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">Jan 10, 2025</span>
+            </div>
+            <strong style="font-size: 0.95rem; color: var(--text-main); display: block; margin-bottom: 4px;">Salesforce Certified AI Associate</strong>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">Credential ID: 5624840 // Generative AI fundamentals, Einstein models, data grounding & ethical AI principles.</div>
+            <div class="cert-card-actions">
+              <a href="assets/certifications/salesforce/salesforce_ai_associate.pdf" target="_blank" class="cyber-btn cyber-btn-sm" style="padding: 6px 14px; font-size: 0.75rem;">
+                <i class="fas fa-file-pdf"></i> OPEN PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Oracle Database Foundations -->
+        <div class="gallery-card cert-card" data-category="database">
+          <div class="gallery-card-img-wrap" style="aspect-ratio: 16/11; background: #070a10;">
+            <img src="assets/certifications/oracle/oracle_cloud_infrastructure.png"
+              alt="Oracle Academy: Database Foundations" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span class="project-tag" style="font-size: 0.68rem; border-color: rgba(248, 113, 113, 0.4); color: #f87171;">ORACLE ACADEMY</span>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">Apr 16, 2022</span>
+            </div>
+            <strong style="font-size: 0.95rem; color: var(--text-main); display: block; margin-bottom: 4px;">Oracle Academy: Database Foundations</strong>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">Final Exam Completion Award // Relational schema design, SQL data modeling, DDL/DML, and database normalization.</div>
+            <div class="cert-card-actions">
+              <a href="assets/certifications/oracle/oracle_cloud_infrastructure.pdf" target="_blank" class="cyber-btn cyber-btn-sm" style="padding: 6px 14px; font-size: 0.75rem;">
+                <i class="fas fa-file-pdf"></i> OPEN PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Python Computing (IIT / NPTEL) -->
+        <div class="gallery-card cert-card" data-category="python">
+          <div class="gallery-card-img-wrap" style="aspect-ratio: 16/11; background: #070a10;">
+            <img src="assets/certifications/python/the_joy_of_computing_using_python.jpg"
+              alt="The Joy of Computing using Python - NPTEL / IIT" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span class="project-tag" style="font-size: 0.68rem; border-color: rgba(168, 85, 247, 0.4); color: var(--violet);">NPTEL / IIT</span>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">Government of India</span>
+            </div>
+            <strong style="font-size: 0.95rem; color: var(--text-main); display: block; margin-bottom: 4px;">The Joy of Computing using Python</strong>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">National Programme on Technology Enhanced Learning // Algorithmic problem solving, Python data structures & computation.</div>
+            <div class="cert-card-actions">
+              <a href="assets/certifications/python/the_joy_of_computing_using_python.jpg" target="_blank" class="cyber-btn cyber-btn-sm" style="padding: 6px 14px; font-size: 0.75rem;">
+                <i class="fas fa-image"></i> VIEW FULL IMAGE
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Foundations of Business Banking -->
+        <div class="gallery-card cert-card" data-category="business">
+          <div class="gallery-card-img-wrap" style="aspect-ratio: 16/11; background: #070a10;">
+            <img src="assets/certifications/linkedin/foundations_of_business_banking.png"
+              alt="Foundations of Business Banking" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span class="project-tag" style="font-size: 0.68rem; border-color: var(--border-light); color: var(--text-muted);">LINKEDIN LEARNING</span>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">Business Finance</span>
+            </div>
+            <strong style="font-size: 0.95rem; color: var(--text-main); display: block; margin-bottom: 4px;">Foundations of Business Banking</strong>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">Commercial loan underwriting, banking products, cash flow analysis & enterprise risk assessment.</div>
+            <div class="cert-card-actions">
+              <a href="assets/certifications/linkedin/foundations_of_business_banking.pdf" target="_blank" class="cyber-btn cyber-btn-sm" style="padding: 6px 14px; font-size: 0.75rem;">
+                <i class="fas fa-file-pdf"></i> OPEN PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Financial Basics Everyone Should Know -->
+        <div class="gallery-card cert-card" data-category="business">
+          <div class="gallery-card-img-wrap" style="aspect-ratio: 16/11; background: #070a10;">
+            <img src="assets/certifications/linkedin/financial_basics_everyone_should_know.png"
+              alt="Financial Basics Everyone Should Know" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span class="project-tag" style="font-size: 0.68rem; border-color: var(--border-light); color: var(--text-muted);">LINKEDIN LEARNING</span>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">Corporate Finance</span>
+            </div>
+            <strong style="font-size: 0.95rem; color: var(--text-main); display: block; margin-bottom: 4px;">Financial Basics Everyone Should Know</strong>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">Financial statements, balance sheet health, P&L dynamics & capital management.</div>
+            <div class="cert-card-actions">
+              <a href="assets/certifications/linkedin/financial_basics_everyone_should_know.pdf" target="_blank" class="cyber-btn cyber-btn-sm" style="padding: 6px 14px; font-size: 0.75rem;">
+                <i class="fas fa-file-pdf"></i> OPEN PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Business Etiquette for the Modern Workplace -->
+        <div class="gallery-card cert-card" data-category="business">
+          <div class="gallery-card-img-wrap" style="aspect-ratio: 16/11; background: #070a10;">
+            <img src="assets/certifications/linkedin/business_etiquette_modern_workplace.png"
+              alt="Business Etiquette for the Modern Workplace" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span class="project-tag" style="font-size: 0.68rem; border-color: var(--border-light); color: var(--text-muted);">LINKEDIN LEARNING</span>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">Professionalism</span>
+            </div>
+            <strong style="font-size: 0.95rem; color: var(--text-main); display: block; margin-bottom: 4px;">Business Etiquette for the Modern Workplace</strong>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">Global enterprise communication, stakeholder alignment & cross-cultural leadership.</div>
+            <div class="cert-card-actions">
+              <a href="assets/certifications/linkedin/business_etiquette_modern_workplace.pdf" target="_blank" class="cyber-btn cyber-btn-sm" style="padding: 6px 14px; font-size: 0.75rem;">
+                <i class="fas fa-file-pdf"></i> OPEN PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Business Etiquette: Phone, Email, and Text -->
+        <div class="gallery-card cert-card" data-category="business">
+          <div class="gallery-card-img-wrap" style="aspect-ratio: 16/11; background: #070a10;">
+            <img src="assets/certifications/linkedin/business_etiquette_phone_email_text.png"
+              alt="Business Etiquette: Phone, Email, and Text" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span class="project-tag" style="font-size: 0.68rem; border-color: var(--border-light); color: var(--text-muted);">LINKEDIN LEARNING</span>
+              <span style="color: var(--text-muted); font-size: 0.75rem;">Executive Comms</span>
+            </div>
+            <strong style="font-size: 0.95rem; color: var(--text-main); display: block; margin-bottom: 4px;">Business Etiquette: Phone, Email, and Text</strong>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 8px;">Corporate communication standards, high-stakes correspondence & digital diplomacy.</div>
+            <div class="cert-card-actions">
+              <a href="assets/certifications/linkedin/business_etiquette_phone_email_text.pdf" target="_blank" class="cyber-btn cyber-btn-sm" style="padding: 6px 14px; font-size: 0.75rem;">
+                <i class="fas fa-file-pdf"></i> OPEN PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Pagination Footer -->
+  <footer class="project-pagination-footer">
+    <div class="project-pagination-container">
+      <a href="index.html#skills" class="pagination-link prev" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <span class="pagination-sub">&larr; RETURN TO</span>
+        <span class="pagination-title">Technical Capabilities & Skills</span>
+      </a>
+
+      <a href="index.html#projects" class="cyber-btn cyber-btn-sm" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-th"></i> FEATURED PROJECTS
+      </a>
+
+      <a href="index.html#experience" class="pagination-link next" style="text-align: right;" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <span class="pagination-sub">EXPLORE &rarr;</span>
+        <span class="pagination-title">Career Experience Timeline</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- RESUME VIEWER MODAL -->
+  <div id="resume-modal-backdrop" class="modal-backdrop">
+    <div class="modal-container" style="max-width: 900px; height: 90vh;">
+      <button id="resume-modal-close-btn" class="modal-close-btn" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body" style="height: 100%; display: flex; flex-direction: column; padding: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); letter-spacing: 1px;">DOCUMENT // VERIFIED CV</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: var(--text-main); margin: 0;">Steve Aby Tonio — Resume</h3>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button id="btn-resume-condensed" class="filter-btn active" onclick="switchResume('condensed')">1-PAGE CONDENSED</button>
+            <button id="btn-resume-full" class="filter-btn" onclick="switchResume('full')">FULL RESUME</button>
+          </div>
+        </div>
+        <div style="flex-grow: 1; width: 100%; background: #000; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light);">
+          <iframe id="resume-iframe" src="assets/resume/Steve_Resume.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMAND PALETTE MODAL (⌘K) -->
+  <div id="cmd-palette-backdrop">
+    <div class="cmd-palette-modal">
+      <div class="cmd-input-wrapper">
+        <i class="fas fa-search cmd-input-icon"></i>
+        <input type="text" id="cmd-palette-input" class="cmd-input" placeholder="Type a command or search..." autocomplete="off">
+      </div>
+      <ul id="cmd-palette-list" class="cmd-results-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Certificate Filter Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.cert-filter-btn');
+      const certCards = document.querySelectorAll('.cert-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-cert-filter');
+          certCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

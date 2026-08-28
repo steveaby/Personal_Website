@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReServe // In-Depth Technical Case Study — Steve Aby Tonio</title>
+  <meta name="description"
+    content="Detailed technical case study of ReServe: Campus Food Sustainability Marketplace & Real-Time Surplus Redistribution Platform built by Steve Aby Tonio.">
+  <meta name="author" content="Steve Aby Tonio">
+  <meta name="theme-color" content="#030407">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:site_name" content="Steve Aby Tonio Portfolio">
+  <meta property="og:title" content="ReServe // In-Depth Technical Case Study — Steve Aby Tonio">
+  <meta property="og:description" content="Campus surplus food marketplace designed to curb food waste in real time, featuring automated TTL expiration cron jobs, RBAC, and live carbon metrics.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="../assets/reserve/01_home_impact_dashboard.png">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ReServe // In-Depth Technical Case Study">
+  <meta name="twitter:description" content="Campus surplus food marketplace designed to curb food waste with automated expiration cron jobs and live carbon metrics.">
+  <meta name="twitter:image" content="../assets/reserve/01_home_impact_dashboard.png">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="project-detail-body">
+  <!-- Background Elements -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grid-bg-overlay"></div>
+  <div class="radial-glow-top"></div>
+  <div class="scanline"></div>
+
+  <!-- HUD Corner Brackets -->
+  <div class="hud-corner top-left"></div>
+  <div class="hud-corner top-right"></div>
+  <div class="hud-corner bottom-left"></div>
+  <div class="hud-corner bottom-right"></div>
+
+  <!-- Navigation Header -->
+  <header class="project-page-header">
+    <div class="project-page-nav-container">
+      <a href="../index.html" class="back-btn" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-chevron-left"></i> // RETURN_TO_BASE
+      </a>
+
+      <a href="../index.html" class="nav-logo" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <img src="../assets/favicon.svg" alt="Logo" class="nav-logo-icon">
+        <span>STEVE<span class="dot">.DEV</span></span>
+      </a>
+
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <a href="https://github.com/steveaby/ReServe" target="_blank" class="cyber-btn cyber-btn-sm">
+          <i class="fab fa-github"></i> <span>SOURCE CODE</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Hero Section -->
+  <main class="project-hero-section">
+    <div class="project-hero-badge-row">
+      <span class="project-category-badge">UIUC CS</span>
+      <span class="project-tag">CAMPUS FOOD SUSTAINABILITY & REAL-TIME MARKETPLACE</span>
+      <span class="project-tag" style="border-color: rgba(74, 222, 128, 0.4); color: #4ade80;"><i class="fas fa-leaf"></i> GREEN TECH</span>
+    </div>
+
+    <h1 class="project-hero-title">ReServe</h1>
+    <p class="project-hero-tagline">
+      A real-time campus surplus food marketplace engineered to curb dining hall waste, featuring automated expiration background cron jobs, role-based access control (RBAC), live environmental telemetry (meals rescued & carbon diverted), and secure JWT/OAuth 2.0 authentication.
+    </p>
+
+    <!-- Telemetry Metrics Strip -->
+    <div class="modal-metrics-grid" style="margin-bottom: 2rem;">
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">100% Diverted</div>
+        <div class="modal-metric-lbl">Surplus Waste Recovery Goal</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">Auto-Cron TTL</div>
+        <div class="modal-metric-lbl">Zero Stale Expired Listings</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">Granular RBAC</div>
+        <div class="modal-metric-lbl">Staff Sellers vs Student Buyers</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">OAuth 2.0 & JWT</div>
+        <div class="modal-metric-lbl">Encrypted Session Security</div>
+      </div>
+    </div>
+
+    <div class="project-hero-actions">
+      <a href="https://github.com/steveaby/ReServe" target="_blank" class="cyber-btn">
+        <i class="fab fa-github"></i> ACCESS GITHUB REPOSITORY
+      </a>
+      <a href="../index.html#projects" class="cyber-btn cyber-btn-secondary">
+        <i class="fas fa-grid-2"></i> EXPLORE ALL PROJECTS
+      </a>
+    </div>
+
+    <!-- Screenshot Gallery Showcase -->
+    <section class="project-gallery-section">
+      <div class="case-study-header">
+        <i class="fas fa-camera"></i> // INTERACTIVE_SYSTEM_SCREENSHOTS
+      </div>
+
+      <div class="project-gallery-grid">
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/reserve/01_home_impact_dashboard.png" alt="Campus Sustainability Hub" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Campus Sustainability Hub:</strong> Live telemetry for total meals rescued, pounds of food diverted, carbon emissions averted, and quick marketplace access.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/reserve/02_food_marketplace.png" alt="Live Meal Marketplace" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Live Meal Marketplace:</strong> Active surplus postings with real-time countdown pickup windows, portion quantities, and dining hall location tags.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/reserve/03_reserve_food_modal.png" alt="Instant Meal Reservation Modal" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Instant Meal Reservation Modal:</strong> Quick portion selection, pickup window summary, allergen review, and one-tap reservation confirmation.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/reserve/08_seller_inventory_management.png" alt="Seller Inventory Management" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Dining Hall Manager Dashboard:</strong> Inventory stock management, active order fulfillment, pickup window controls, and listing telemetry.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/reserve/04_post_donation_form.png" alt="Surplus Donation Publishing" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Surplus Donation Publishing:</strong> Dynamic creation form with dietary allergen tags, pickup window pickers, and automated quantity tracking.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/reserve/05_student_order_history.png" alt="Student Order History" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Student Order History:</strong> Chronological log of claimed meals, pickup verification codes, and historical dietary telemetry.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/reserve/10_marketplace_filtered_search.png" alt="Smart Multi-Filter Search" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Smart Multi-Filter Search:</strong> Instant filtering by campus dining locations (Ikenberry, ISR, FAR) and dietary needs (Vegan, Halal, Gluten-Free, High-Protein).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Dive Technical Content -->
+    <div class="case-study-content">
+      <!-- 01. Overview & Motivation -->
+      <article class="case-study-card featured">
+        <div class="case-study-header">
+          <i class="fas fa-bullseye"></i> 01 // OVERVIEW_&_MOTIVATION
+        </div>
+        <div class="case-study-body">
+          <p>
+            University dining halls prepare thousands of meals daily, routinely generating prepared food surplus that goes to waste due to strict end-of-service discard policies. Concurrently, many college students experience food insecurity or struggle to find affordable, fresh meals between classes.
+          </p>
+          <p>
+            <strong>ReServe</strong> bridges this disconnect by providing an automated, real-time surplus food marketplace. Dining hall staff and university organizations can publish surplus meal batches in seconds with strict pickup windows, while students can browse, filter by dietary requirements, and instantly reserve meals before discard times.
+          </p>
+        </div>
+      </article>
+
+      <!-- 02. System Architecture -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-network-wired"></i> 02 // SYSTEM_ARCHITECTURE_&_DATA_FLOW
+        </div>
+        <div class="case-study-body">
+          <p>
+            ReServe is architected as a modern full-stack web platform with strict role isolation:
+          </p>
+          <ul class="modal-feature-list" style="margin: 1rem 0;">
+            <li class="modal-feature-item">
+              <strong>Frontend (React 19 & Vite 7):</strong> Single-page application utilizing modular CSS, custom state stores, and dynamic client-side filtering for zero-latency search across active meal listings.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Backend REST API (Node.js ESM & Express 5):</strong> Handles business logic, transactional meal claims, bcrypt password hashing, JWT session signing, and Google OAuth 2.0 integration.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Data Persistence (MongoDB Atlas & Mongoose 8):</strong> Document database modeling Users, Listings, Reservations, and Analytics with compound indexes for fast geospatial and dietary queries.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Automated Expiration Background Cron:</strong> An automated server-side scheduler executes periodically to mark listings as expired the instant their pickup window closes, preventing students from reserving outdated food.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 03. Core Engineering Highlights -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-microchip"></i> 03 // CORE_ENGINEERING_HIGHLIGHTS
+        </div>
+        <div class="case-study-body">
+          <ul class="modal-feature-list">
+            <li class="modal-feature-item">
+              <strong>Granular Role-Based Access Control (RBAC):</strong> Strict route middleware separates <em>Student Buyers</em> (marketplace discovery, reservation claiming, order history) from <em>Dining Staff Sellers</em> (surplus posting, inventory decrementing, donation impact logs).
+            </li>
+            <li class="modal-feature-item">
+              <strong>Real-Time Environmental Impact Tracking:</strong> Mathematically aggregates meals rescued, estimated food weight diverted, and CO₂ equivalent greenhouse emissions prevented across the entire campus.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Dietary & Allergen Filtering Matrix:</strong> Instant multi-tag matching supporting Vegan, Vegetarian, Halal, Gluten-Free, and High-Protein diets with UI warning badges.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Secure Dual Authentication:</strong> Supports standard email/password authentication with salted bcrypt hashing alongside one-click Google OAuth 2.0 token verification.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 04. Technical Specifications -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-cubes"></i> 04 // TECHNICAL_SPECIFICATIONS
+        </div>
+        <div class="tech-spec-grid">
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// FRONTEND</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">React 19</span>
+              <span class="project-tag">Vite 7</span>
+              <span class="project-tag">Modular CSS</span>
+              <span class="project-tag">Lucide React</span>
+              <span class="project-tag">Context API</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// BACKEND_&_AUTH</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">Node.js (ESM)</span>
+              <span class="project-tag">Express 5</span>
+              <span class="project-tag">JWT (jsonwebtoken)</span>
+              <span class="project-tag">Bcrypt Hashing</span>
+              <span class="project-tag">Google OAuth 2.0</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// DATABASE_&_CRON</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">MongoDB Atlas</span>
+              <span class="project-tag">Mongoose 8</span>
+              <span class="project-tag">Node-Cron Schedulers</span>
+              <span class="project-tag">TTL Data Lifecycles</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// COLLABORATORS</div>
+            <div style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-main); margin-top: 0.5rem;">
+              Steve Aby Tonio  •  Aditya KP  •  Chirag Chandani
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Project Pagination Footer -->
+  <footer class="project-pagination-footer">
+    <div class="project-pagination-container">
+      <a href="bugcatcherjoey.html" class="pagination-link prev">
+        <span class="pagination-sub">&larr; PREVIOUS MODULE</span>
+        <span class="pagination-title">BugCatcher Joey (AI Strategist)</span>
+      </a>
+
+      <a href="../index.html#projects" class="cyber-btn cyber-btn-sm" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-th"></i> ALL PROJECTS
+      </a>
+
+      <a href="illiniride.html" class="pagination-link next" style="text-align: right;">
+        <span class="pagination-sub">NEXT MODULE &rarr;</span>
+        <span class="pagination-title">IlliniRide (Campus Carpooling)</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VectorQuest // In-Depth Technical Case Study — Steve Aby Tonio</title>
+  <meta name="description"
+    content="Detailed research case study of VectorQuest: A Faster and Better Open-Domain Question-Answering System published in Springer Nature by Steve Aby Tonio.">
+  <meta name="author" content="Steve Aby Tonio">
+  <meta name="theme-color" content="#030407">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:site_name" content="Steve Aby Tonio Portfolio">
+  <meta property="og:title" content="VectorQuest // In-Depth Technical Case Study — Steve Aby Tonio">
+  <meta property="og:description" content="Published in Springer Nature: A Faster and Better Open-Domain Question-Answering System accelerating inference throughput by 50x.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="../assets/vectorquest/VectorQuest.jpg">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VectorQuest // In-Depth Technical Case Study">
+  <meta name="twitter:description" content="Published in Springer Nature: Accelerating Open-Domain QA throughput by 50x with novel vector knowledge representations.">
+  <meta name="twitter:image" content="../assets/vectorquest/VectorQuest.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="project-detail-body">
+  <!-- Background Elements -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grid-bg-overlay"></div>
+  <div class="radial-glow-top"></div>
+  <div class="scanline"></div>
+
+  <!-- HUD Corner Brackets -->
+  <div class="hud-corner top-left"></div>
+  <div class="hud-corner top-right"></div>
+  <div class="hud-corner bottom-left"></div>
+  <div class="hud-corner bottom-right"></div>
+
+  <!-- Navigation Header -->
+  <header class="project-page-header">
+    <div class="project-page-nav-container">
+      <a href="../index.html" class="back-btn" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-chevron-left"></i> // RETURN_TO_BASE
+      </a>
+
+      <a href="../index.html" class="nav-logo" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <img src="../assets/favicon.svg" alt="Logo" class="nav-logo-icon">
+        <span>STEVE<span class="dot">.DEV</span></span>
+      </a>
+
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <a href="https://link.springer.com/chapter/10.1007/978-3-031-88237-1_4" target="_blank" class="cyber-btn cyber-btn-sm">
+          <i class="fas fa-external-link-alt"></i> <span>SPRINGER PUBLICATION</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Hero Section -->
+  <main class="project-hero-section">
+    <div class="project-hero-badge-row">
+      <span class="project-category-badge" style="background: rgba(168, 85, 247, 0.15); border-color: var(--violet); color: var(--violet);">SPRINGER NATURE</span>
+      <span class="project-tag">PEER-REVIEWED AI RESEARCH</span>
+      <span class="project-tag" style="border-color: rgba(0, 243, 255, 0.4); color: var(--cyan);"><i class="fas fa-book"></i> LNNS BOOK SERIES</span>
+    </div>
+
+    <h1 class="project-hero-title">VectorQuest</h1>
+    <p class="project-hero-tagline">
+      A Faster and Better Open-Domain Question-Answering System: Accelerating neural QA throughput by 50x through novel dense vector knowledge representations and high-dimensional semantic search indexing.
+    </p>
+
+    <!-- Telemetry Metrics Strip -->
+    <div class="modal-metrics-grid" style="margin-bottom: 2rem;">
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">50x Faster</div>
+        <div class="modal-metric-lbl">Answer Prediction Retrieval</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">Springer Nature</div>
+        <div class="modal-metric-lbl">Peer-Reviewed Publication</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">SQuAD Benchmark</div>
+        <div class="modal-metric-lbl">Validated Accuracy & F1</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">O(1) / O(log N)</div>
+        <div class="modal-metric-lbl">Approximate Nearest Neighbor (ANN)</div>
+      </div>
+    </div>
+
+    <div class="project-hero-actions">
+      <a href="https://link.springer.com/chapter/10.1007/978-3-031-88237-1_4" target="_blank" class="cyber-btn">
+        <i class="fas fa-external-link-alt"></i> VIEW PAPER ON SPRINGER NATURE
+      </a>
+      <a href="../index.html#research" class="cyber-btn cyber-btn-secondary">
+        <i class="fas fa-flask"></i> RESEARCH PORTFOLIO
+      </a>
+    </div>
+
+    <!-- Screenshot / Architecture Diagram Showcase -->
+    <section class="project-gallery-section">
+      <div class="case-study-header">
+        <i class="fas fa-diagram-project"></i> // RESEARCH_ARCHITECTURE_&_SCHEMATIC
+      </div>
+
+      <div class="project-gallery-grid">
+        <div class="gallery-card" style="max-width: 800px; margin: 0 auto;">
+          <div class="gallery-card-img-wrap" style="aspect-ratio: 16/10;">
+            <img src="../assets/vectorquest/VectorQuest.jpg" alt="VectorQuest Architecture Diagram" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>VectorQuest Pipeline Architecture:</strong> End-to-end flow demonstrating dense document chunking, semantic embedding generation, vector database indexing, and sub-millisecond reader retrieval.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Dive Technical Content -->
+    <div class="case-study-content">
+      <!-- 01. Overview & Research Motivation -->
+      <article class="case-study-card featured">
+        <div class="case-study-header">
+          <i class="fas fa-bullseye"></i> 01 // RESEARCH_OVERVIEW_&_ABSTRACT
+        </div>
+        <div class="case-study-body">
+          <p>
+            Unlike traditional reading comprehension Question Answering (QA) systems that require human users to manually provide background context paragraphs alongside every prompt, real-world applications demand <strong>unrestricted open-domain question answering</strong>.
+          </p>
+          <p>
+            However, existing baseline models rely on linear scans across tabular dataframes or heavy end-to-end transformer passes, resulting in prohibitive latency overhead for production queries.
+          </p>
+          <p>
+            <strong>VectorQuest</strong> addresses this fundamental performance bottleneck by introducing a novel vector knowledge storage technique. By decoupling the dense retrieval phase from inference reasoning, VectorQuest achieves <strong>50 times faster prediction speeds</strong> than existing baseline systems while preserving top-tier accuracy and F1 metrics on SQuAD benchmarks.
+          </p>
+        </div>
+      </article>
+
+      <!-- 02. Mathematical Formulation & Architecture -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-network-wired"></i> 02 // MATHEMATICAL_FORMULATION_&_PIPELINE
+        </div>
+        <div class="case-study-body">
+          <p>
+            The VectorQuest pipeline operates in two core decoupled phases:
+          </p>
+          <ul class="modal-feature-list" style="margin: 1rem 0;">
+            <li class="modal-feature-item">
+              <strong>Offline Dense Knowledge Vectorization:</strong> Unstructured text corpora and knowledge graphs are chunked into semantic units and transformed into high-dimensional dense embeddings using neural encoders. Embeddings are indexed in a high-performance vector database with HNSW / IVF indexing structures.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Online Semantic Retrieval & Span Extraction:</strong> When an incoming query arrives, it is embedded on-the-fly and queried against the vector knowledge base using cosine similarity. Approximate Nearest Neighbor (ANN) search retrieves the top-K relevant document spans in sub-milliseconds ($O(\log N)$ complexity).
+            </li>
+            <li class="modal-feature-item">
+              <strong>Transformer Reader Head:</strong> Only the top semantic candidate spans are fed into the downstream reading comprehension model, drastically shrinking the attention context window and multiplying inference throughput by 50x.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 03. Core Engineering & Research Highlights -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-microchip"></i> 03 // CORE_RESEARCH_HIGHLIGHTS
+        </div>
+        <div class="case-study-body">
+          <ul class="modal-feature-list">
+            <li class="modal-feature-item">
+              <strong>50x Faster Prediction Speeds:</strong> Evaluated empirically on the Stanford Question Answering Dataset (SQuAD), achieving a 50-fold reduction in time-to-first-answer.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Unrestricted Open-Domain Queries:</strong> Answers diverse factual and multi-sentence inquiries without requiring pre-selected context documents.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Peer-Reviewed Publication:</strong> Formally accepted and published in Springer Nature's <em>Lecture Notes in Networks and Systems (LNNS)</em> book series.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Memory-Efficient High-Dimensional Indexing:</strong> Reduces GPU VRAM overhead by offloading passage lookup to quantized vector indexes.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 04. Publication Metadata -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-book"></i> 04 // PUBLICATION_METADATA_&_CITATION
+        </div>
+        <div class="tech-spec-grid">
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// PUBLISHER</div>
+            <div style="font-family: var(--font-display); font-weight: 700; color: var(--text-main);">
+              Springer Nature (Switzerland)
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+              Series: Lecture Notes in Networks and Systems (LNNS, Vol. 1251)
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// DOI_LINK</div>
+            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--cyan); word-break: break-all;">
+              10.1007/978-3-031-88237-1_4
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// PRIMARY_TECH_STACK</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">Hugging Face Transformers</span>
+              <span class="project-tag">Vector Databases</span>
+              <span class="project-tag">HNSW Vector Search</span>
+              <span class="project-tag">SQuAD Benchmark</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// AUTHOR</div>
+            <div style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-main); margin-top: 0.5rem;">
+              Steve Aby Tonio
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Project Pagination Footer -->
+  <footer class="project-pagination-footer">
+    <div class="project-pagination-container">
+      <a href="hypersafety.html" class="pagination-link prev">
+        <span class="pagination-sub">&larr; PREVIOUS MODULE</span>
+        <span class="pagination-title">HyperSafety (Computer Vision)</span>
+      </a>
+
+      <a href="../index.html#projects" class="cyber-btn cyber-btn-sm" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-th"></i> ALL PROJECTS
+      </a>
+
+      <a href="sidelinesight.html" class="pagination-link next" style="text-align: right;">
+        <span class="pagination-sub">NEXT MODULE &rarr;</span>
+        <span class="pagination-title">SidelineSight (Sports Analytics)</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

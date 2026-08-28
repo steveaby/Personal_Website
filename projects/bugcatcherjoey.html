@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BugCatcher Joey // In-Depth Technical Case Study — Steve Aby Tonio</title>
+  <meta name="description"
+    content="Detailed technical case study of BugCatcher Joey: AI Pokémon Meta Optimizer & Monte Carlo Tree Search Engine built for HackIllinois 2026 by Steve Aby Tonio.">
+  <meta name="author" content="Steve Aby Tonio">
+  <meta name="theme-color" content="#030407">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:site_name" content="Steve Aby Tonio Portfolio">
+  <meta property="og:title" content="BugCatcher Joey // In-Depth Technical Case Study — Steve Aby Tonio">
+  <meta property="og:description" content="AI Pokémon Strategist optimizing competitive team rosters using Monte Carlo Tree Search & Modal Cloud parallel compute.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="../assets/bugcatcher/Bug_Home.jpg">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BugCatcher Joey // In-Depth Technical Case Study">
+  <meta name="twitter:description" content="AI Pokémon Strategist optimizing competitive team rosters using Monte Carlo Tree Search & Modal Cloud parallel compute.">
+  <meta name="twitter:image" content="../assets/bugcatcher/Bug_Home.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="project-detail-body">
+  <!-- Background Elements -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grid-bg-overlay"></div>
+  <div class="radial-glow-top"></div>
+  <div class="scanline"></div>
+
+  <!-- HUD Corner Brackets -->
+  <div class="hud-corner top-left"></div>
+  <div class="hud-corner top-right"></div>
+  <div class="hud-corner bottom-left"></div>
+  <div class="hud-corner bottom-right"></div>
+
+  <!-- Navigation Header -->
+  <header class="project-page-header">
+    <div class="project-page-nav-container">
+      <a href="../index.html" class="back-btn" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-chevron-left"></i> // RETURN_TO_BASE
+      </a>
+
+      <a href="../index.html" class="nav-logo" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <img src="../assets/favicon.svg" alt="Logo" class="nav-logo-icon">
+        <span>STEVE<span class="dot">.DEV</span></span>
+      </a>
+
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <a href="https://github.com/ChinDandekar/bugcatcherjoey" target="_blank" class="cyber-btn cyber-btn-sm">
+          <i class="fab fa-github"></i> <span>SOURCE CODE</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Hero Section -->
+  <main class="project-hero-section">
+    <div class="project-hero-badge-row">
+      <span class="project-category-badge">HackIllinois 2026</span>
+      <span class="project-tag">AI POKÉMON STRATEGIST & MONTE CARLO META ENGINE</span>
+      <span class="project-tag" style="border-color: rgba(0, 243, 255, 0.4); color: var(--cyan);"><i class="fas fa-bolt"></i> MODAL CLUSTER ENGINE</span>
+    </div>
+
+    <h1 class="project-hero-title">BugCatcher Joey</h1>
+    <p class="project-hero-tagline">
+      An intelligent AI Pokémon Strategist that mathematically stress tests and optimizes competitive rosters against the Smogon OU metagame using Monte Carlo Tree Search, sub-second damage calculations, and serverless parallel compute on Modal Cloud.
+    </p>
+
+    <!-- Telemetry Metrics Strip -->
+    <div class="modal-metrics-grid" style="margin-bottom: 2rem;">
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">MCTS Search</div>
+        <div class="modal-metric-lbl">Parallel Battle Tree Simulator</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">1000+ Archetypes</div>
+        <div class="modal-metric-lbl">Competitive Smogon Meta Coverage</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">Modal Cloud</div>
+        <div class="modal-metric-lbl">Serverless Parallel Worker Pool</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">Sub-Second</div>
+        <div class="modal-metric-lbl">Turn-To-KO Breakpoint Solves</div>
+      </div>
+    </div>
+
+    <div class="project-hero-actions">
+      <a href="https://github.com/ChinDandekar/bugcatcherjoey" target="_blank" class="cyber-btn">
+        <i class="fab fa-github"></i> ACCESS GITHUB REPOSITORY
+      </a>
+      <a href="../index.html#projects" class="cyber-btn cyber-btn-secondary">
+        <i class="fas fa-grid-2"></i> EXPLORE ALL PROJECTS
+      </a>
+    </div>
+
+    <!-- Screenshot Gallery Showcase -->
+    <section class="project-gallery-section">
+      <div class="case-study-header">
+        <i class="fas fa-camera"></i> // INTERACTIVE_SYSTEM_SCREENSHOTS
+      </div>
+
+      <div class="project-gallery-grid">
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/bugcatcher/Bug_Home.jpg" alt="BugCatcher Joey Home Interface" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>AI Strategist Hub:</strong> Metagame selection, team roster builder, archetype synergy analyzer, and one-click optimization triggers.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/bugcatcher/Bug_Sim.jpg" alt="Monte Carlo Simulator View" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Monte Carlo Battle Simulator:</strong> Real-time evaluation of branching game-state probability trees and predicted matchup win rates.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/bugcatcher/Bug_Opti.jpg" alt="Team Synergy Optimizer" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Team Synergy Optimizer:</strong> Algorithmic roster swap recommendations patching defensive vulnerabilities and speed tier deficits.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/bugcatcher/Bug_Poke.jpg" alt="Pokemon Deep Dive Stats" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Pokémon Individual Deep Dive:</strong> Stat radars, competitive move sets, ability synergies, EV spreads, and type effectiveness charts.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/bugcatcher/Bug_Item.jpg" alt="Item and Damage Calculations" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Item & Hazard Breakpoint Calculator:</strong> Smogon damage calculation matrix and turn-to-KO probability estimates.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Dive Technical Content -->
+    <div class="case-study-content">
+      <!-- 01. Overview & Motivation -->
+      <article class="case-study-card featured">
+        <div class="case-study-header">
+          <i class="fas fa-bullseye"></i> 01 // OVERVIEW_&_MOTIVATION
+        </div>
+        <div class="case-study-body">
+          <p>
+            Competitive Pokémon is a game of high-dimensional strategy, complex mathematical damage formulas, and predicting an ever-shifting competitive metagame. Building a top-tier roster manually requires countless hours of manual calculations and spreadsheet analysis.
+          </p>
+          <p>
+            <strong>BugCatcher Joey</strong> was built for <strong>HackIllinois 2026</strong> as an automated AI Strategist that takes any player-crafted team and rigorously stress tests it against top-tier competitive Smogon OU metagame threats. Rather than relying on simple static tier lists, Joey performs parallelized Monte Carlo simulations to mathematically identify defensive holes, EV inefficiencies, and move pool blind spots.
+          </p>
+        </div>
+      </article>
+
+      <!-- 02. System Architecture -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-network-wired"></i> 02 // SYSTEM_ARCHITECTURE_&_HYBRID_PIPELINE
+        </div>
+        <div class="case-study-body">
+          <p>
+            The project leverages a decoupled, high-performance hybrid architecture across three layers:
+          </p>
+          <ul class="modal-feature-list" style="margin: 1rem 0;">
+            <li class="modal-feature-item">
+              <strong>Reactive Glassmorphism Frontend (React 19 & Vite):</strong> Interacts with the PokeAPI for live sprite and stat fetching, and features Framer Motion animations for simulated battle turns.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Serverless Compute Cluster (Modal Cloud):</strong> Deploys containerized Python FastAPI microservices on Modal. Modal dynamically provisions isolated cloud containers, pulling the heavy <code>@smogon/calc</code> Node.js mathematical engine to run thousands of damage calculations in parallel.
+            </li>
+            <li class="modal-feature-item">
+              <strong>AI Strategist Agent (OpenRouter LLM Integration):</strong> Synthesizes quantitative simulation data into actionable competitive recommendations and tactical insights for the trainer.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Showdown Syntax Exporter:</strong> Automatically converts the AI-optimized team into standard Pokémon Showdown export format ready for tournament play.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 03. Core Engineering Highlights -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-microchip"></i> 03 // CORE_ENGINEERING_HIGHLIGHTS
+        </div>
+        <div class="case-study-body">
+          <ul class="modal-feature-list">
+            <li class="modal-feature-item">
+              <strong>Monte Carlo Tree Search (MCTS):</strong> Evaluates branching probability trees across potential lead match-ups, weather conditions, entry hazards, and status conditions to discover statistically dominant sequences.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Automated OHKO Breakpoint Discovery:</strong> Computes exact EV spreads required to survive key metagame attacks and achieve guaranteed one-hit or two-hit knockouts (OHKO/2HKO).
+            </li>
+            <li class="modal-feature-item">
+              <strong>Dynamic Meta Countering:</strong> Analyzes user-selected rosters against prevailing tier threats to suggest optimal item replacements (Choice Specs, Focus Sash, Heavy-Duty Boots) and coverage moves.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Zero-Cold-Start Cloud Architecture:</strong> Modal's serverless infrastructure auto-scales worker containers on demand without ongoing idle server costs.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 04. Technical Specifications -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-cubes"></i> 04 // TECHNICAL_SPECIFICATIONS
+        </div>
+        <div class="tech-spec-grid">
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// FRONTEND</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">React 19</span>
+              <span class="project-tag">Vite</span>
+              <span class="project-tag">Framer Motion</span>
+              <span class="project-tag">PokeAPI Integration</span>
+              <span class="project-tag">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// BACKEND_&_CLOUD</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">Python 3.11</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Modal Cloud (Serverless)</span>
+              <span class="project-tag">Node.js (@smogon/calc)</span>
+              <span class="project-tag">SSE Streaming</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// ALGORITHMS_&_AI</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">Monte Carlo Tree Search</span>
+              <span class="project-tag">OpenRouter LLMs</span>
+              <span class="project-tag">Smogon Damage Formulas</span>
+              <span class="project-tag">Heuristic Team Scoring</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// COLLABORATORS</div>
+            <div style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-main); margin-top: 0.5rem;">
+              Steve Aby Tonio  •  Chinmay Dandekar  •  Pranav Premchand
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Project Pagination Footer -->
+  <footer class="project-pagination-footer">
+    <div class="project-pagination-container">
+      <a href="sidelinesight.html" class="pagination-link prev">
+        <span class="pagination-sub">&larr; PREVIOUS MODULE</span>
+        <span class="pagination-title">SidelineSight (Sports Analytics)</span>
+      </a>
+
+      <a href="../index.html#projects" class="cyber-btn cyber-btn-sm" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-th"></i> ALL PROJECTS
+      </a>
+
+      <a href="reserve.html" class="pagination-link next" style="text-align: right;">
+        <span class="pagination-sub">NEXT MODULE &rarr;</span>
+        <span class="pagination-title">ReServe (Campus Sustainability)</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

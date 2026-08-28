@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SidelineSight // In-Depth Technical Case Study — Steve Aby Tonio</title>
+  <meta name="description"
+    content="Detailed technical case study of SidelineSight: Cognitive-Adaptive Live Sports Analytics & NBA/NHL WebSocket Simulation Platform built by Steve Aby Tonio.">
+  <meta name="author" content="Steve Aby Tonio">
+  <meta name="theme-color" content="#030407">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:site_name" content="Steve Aby Tonio Portfolio">
+  <meta property="og:title" content="SidelineSight // In-Depth Technical Case Study — Steve Aby Tonio">
+  <meta property="og:description" content="Next-gen cognitive-adaptive live sports analytics platform streaming NBA & NHL WebSocket simulations with 2D SVG shot coordinate mapping.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="../assets/sidelinesight/04_game_dashboard_nba.png">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SidelineSight // In-Depth Technical Case Study">
+  <meta name="twitter:description" content="Next-gen cognitive-adaptive live sports analytics platform streaming NBA & NHL WebSocket simulations.">
+  <meta name="twitter:image" content="../assets/sidelinesight/04_game_dashboard_nba.png">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="project-detail-body">
+  <!-- Background Canvas & Grid Overlay -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="grid-bg-overlay"></div>
+  <div class="radial-glow-top"></div>
+  <div class="scanline"></div>
+
+  <!-- HUD Corner Brackets -->
+  <div class="hud-corner top-left"></div>
+  <div class="hud-corner top-right"></div>
+  <div class="hud-corner bottom-left"></div>
+  <div class="hud-corner bottom-right"></div>
+
+  <!-- Navigation Header -->
+  <header class="project-page-header">
+    <div class="project-page-nav-container">
+      <a href="../index.html" class="back-btn" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-chevron-left"></i> // RETURN_TO_BASE
+      </a>
+
+      <a href="../index.html" class="nav-logo" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <img src="../assets/favicon.svg" alt="Logo" class="nav-logo-icon">
+        <span>STEVE<span class="dot">.DEV</span></span>
+      </a>
+
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <a href="https://github.com/steveaby/SidelineSight" target="_blank" class="cyber-btn cyber-btn-sm">
+          <i class="fab fa-github"></i> <span>SOURCE CODE</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Hero Section -->
+  <main class="project-hero-section">
+    <div class="project-hero-badge-row">
+      <span class="project-category-badge">UIUC CS</span>
+      <span class="project-tag">LIVE WEBSOCKETS & COGNITIVE-ADAPTIVE SPORTS ANALYTICS</span>
+      <span class="project-tag" style="border-color: rgba(74, 222, 128, 0.4); color: #4ade80;"><i class="fas fa-circle" style="font-size: 0.5rem;"></i> PRODUCTION TESTED</span>
+    </div>
+
+    <h1 class="project-hero-title">SidelineSight</h1>
+    <p class="project-hero-tagline">
+      Next-generation sports analytics platform and cognitive-adaptive live dashboard streaming high-frequency NBA & NHL game simulations with dynamic 2D SVG shot coordinate mapping, momentum-driven highlight feeds, and persona-specific HUD modes.
+    </p>
+
+    <!-- Telemetry Metrics Strip -->
+    <div class="modal-metrics-grid" style="margin-bottom: 2rem;">
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">&lt; 15ms</div>
+        <div class="modal-metric-lbl">WebSocket Frame Latency</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">2 Major Leagues</div>
+        <div class="modal-metric-lbl">NBA & NHL Live Ingestion</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">100% Vector</div>
+        <div class="modal-metric-lbl">SVG Dynamic Shot Projections</div>
+      </div>
+      <div class="modal-metric-card">
+        <div class="modal-metric-val">4 Intent Personas</div>
+        <div class="modal-metric-lbl">Cognitive-Adaptive Layouts</div>
+      </div>
+    </div>
+
+    <div class="project-hero-actions">
+      <a href="https://github.com/steveaby/SidelineSight" target="_blank" class="cyber-btn">
+        <i class="fab fa-github"></i> ACCESS GITHUB REPOSITORY
+      </a>
+      <a href="../index.html#projects" class="cyber-btn cyber-btn-secondary">
+        <i class="fas fa-grid-2"></i> EXPLORE ALL PROJECTS
+      </a>
+    </div>
+
+    <!-- Screenshot Gallery Showcase -->
+    <section class="project-gallery-section">
+      <div class="case-study-header">
+        <i class="fas fa-camera"></i> // INTERACTIVE_SYSTEM_SCREENSHOTS
+      </div>
+
+      <div class="project-gallery-grid">
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/sidelinesight/04_game_dashboard_nba.png" alt="NBA Game Dashboard" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>NBA Live Match Center:</strong> Interactive hardwood court shot map, quarter momentum tracker, box score, and active floor timeline.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/sidelinesight/05_game_dashboard_nhl.png" alt="NHL Game Dashboard" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>NHL Live Game Engine:</strong> Rink coordinate tracking, goalie save metrics, powerplay indicators, and time-on-ice telemetry.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/sidelinesight/03_live_lobby.png" alt="Live Match Lobby" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Multi-Sport Live Lobby:</strong> Real-time match schedules, active league statuses, win probability gauges, and score tracking.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/sidelinesight/08_intent_mode_player_tracker.png" alt="Player Tracking Mode" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Player Tracking Intent Mode:</strong> Deep-dive bio-metrics, shot selection breakdown, plus/minus metrics, and usage rate.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/sidelinesight/09_intent_mode_betting_insights.png" alt="Betting Intelligence Hub" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Betting Intelligence Hub:</strong> Live moneyline swings, spread probabilities, player prop telemetry, and momentum trends.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/sidelinesight/06_floating_scoreboard.png" alt="Floating Scoreboard" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Compact Floating HUD:</strong> Minimalist scoreboard widget designed for multi-screen monitoring and low-latency updates.
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src="../assets/sidelinesight/01_perspective_config.png" alt="Perspective Configuration" class="gallery-card-img">
+          </div>
+          <div class="gallery-card-caption">
+            <strong>Perspective Calibration:</strong> Configuring viewer angles and customized camera vantage presets.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Dive Technical Content -->
+    <div class="case-study-content">
+      <!-- 01. Overview & Motivation -->
+      <article class="case-study-card featured">
+        <div class="case-study-header">
+          <i class="fas fa-bullseye"></i> 01 // OVERVIEW_&_MOTIVATION
+        </div>
+        <div class="case-study-body">
+          <p>
+            Modern sports broadcasting dashboards are notoriously bloated, rigid, and one-size-fits-all. Casual fans get overwhelmed by walls of dense tabular numbers, while analysts and bettors struggle to extract high-leverage data in real-time.
+          </p>
+          <p>
+            <strong>SidelineSight</strong> solves this by introducing a <strong>cognitive-adaptive live sports telemetry architecture</strong>. Instead of static HTML pages that refresh periodically, SidelineSight streams sub-15ms WebSocket state frames directly into an intent-driven interface that dynamically adapts its layout, widgets, and visual hierarchy to match the user's primary viewing objective (Study, Player Tracking, Betting Intelligence, or Minimal Floating Scoreboard).
+          </p>
+        </div>
+      </article>
+
+      <!-- 02. System Architecture -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-network-wired"></i> 02 // SYSTEM_ARCHITECTURE_&_DATA_PIPELINE
+        </div>
+        <div class="case-study-body">
+          <p>
+            The platform is structured into a decoupled, real-time client-server architecture:
+          </p>
+          <ul class="modal-feature-list" style="margin: 1rem 0;">
+            <li class="modal-feature-item">
+              <strong>High-Concurrency Streaming Server (Python FastAPI & Uvicorn):</strong> Ingests live ESPN feed schemas, synthesizes microsecond game events, and broadcasts state frames over persistent bidirectional WebSockets.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Coordinate Transformation Pipeline:</strong> Normalizes raw 2D coordinate telemetry into mathematically precise SVG viewBox coordinate systems for hardwood basketball courts and NHL hockey rinks.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Reactive Client Engine (Next.js 16 App Router & React 19):</strong> Utilizes custom WebSocket connection state hooks with automatic exponential backoff reconnection, local memory caching, and Framer Motion 12 hardware-accelerated animations.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Resilient Offline Caching:</strong> Roster datasets, team color schemes, and player headshots are stored locally with memory fallback, preventing UI stutters during intermittent network drops.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 03. Core Engineering Highlights -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-microchip"></i> 03 // CORE_ENGINEERING_HIGHLIGHTS
+        </div>
+        <div class="case-study-body">
+          <ul class="modal-feature-list">
+            <li class="modal-feature-item">
+              <strong>Dynamic SVG Shot Coordinate Mapping:</strong> Renders vector-accurate basketball shot arcs (makes, misses, blocked attempts) and hockey puck trajectories in real-time without canvas repaint bottlenecks.
+            </li>
+            <li class="modal-feature-item">
+              <strong>Game State Momentum Reordering:</strong> Evaluates score differentials and clock leverage to automatically prioritize clutch fourth-quarter possessions over routine early-game stats.
+            </li>
+            <li class="modal-feature-item">
+              <strong>4 Cognitive Intent Layouts:</strong> Dynamically morphs the interface between <em>Study Mode</em> (deep statistical radar), <em>Player Tracking</em> (usage & +/- efficiency), <em>Betting Insights</em> (live spreads & moneyline momentum), and <em>Floating Scoreboard</em> (ultra-low footprint).
+            </li>
+            <li class="modal-feature-item">
+              <strong>Multi-League Dual Engine:</strong> Handles distinct sport rules, period clocks, penalty kill timers, and box scores across both the NBA and NHL simultaneously.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 04. Technical Specifications -->
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <i class="fas fa-cubes"></i> 04 // TECHNICAL_SPECIFICATIONS
+        </div>
+        <div class="tech-spec-grid">
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// FRONTEND_ARCHITECTURE</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">Next.js 16 (App Router)</span>
+              <span class="project-tag">React 19</span>
+              <span class="project-tag">Tailwind CSS v4</span>
+              <span class="project-tag">Framer Motion 12</span>
+              <span class="project-tag">Lucide Icons</span>
+              <span class="project-tag">SVG ViewBox Engine</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// BACKEND_&_STREAMING</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">Python 3.11</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">WebSockets</span>
+              <span class="project-tag">Uvicorn ASGI</span>
+              <span class="project-tag">Pydantic v2</span>
+              <span class="project-tag">ESPN Live API</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// DATA_&_ALGORITHMS</div>
+            <div class="tech-spec-tags">
+              <span class="project-tag">NumPy</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">Win Probability Math</span>
+              <span class="project-tag">2D Coordinate Mapping</span>
+              <span class="project-tag">Momentum Leverage Index</span>
+            </div>
+          </div>
+
+          <div class="tech-spec-card">
+            <div class="tech-spec-label">// COLLABORATORS</div>
+            <div style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-main); margin-top: 0.5rem;">
+              Steve Aby Tonio  •  Pranav Premchand
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Project Pagination Footer -->
+  <footer class="project-pagination-footer">
+    <div class="project-pagination-container">
+      <a href="vectorquest.html" class="pagination-link prev">
+        <span class="pagination-sub">&larr; PREVIOUS MODULE</span>
+        <span class="pagination-title">VectorQuest (Springer Nature)</span>
+      </a>
+
+      <a href="../index.html#projects" class="cyber-btn cyber-btn-sm" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-th"></i> ALL PROJECTS
+      </a>
+
+      <a href="bugcatcherjoey.html" class="pagination-link next" style="text-align: right;">
+        <span class="pagination-sub">NEXT MODULE &rarr;</span>
+        <span class="pagination-title">BugCatcher Joey (AI Strategist)</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>
