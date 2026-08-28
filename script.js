@@ -1126,18 +1126,21 @@ function initResumeModal() {
   if (closeBtn && backdrop) {
     closeBtn.addEventListener('click', () => {
       backdrop.classList.remove('active');
+      backdrop.classList.remove('open');
     });
 
     backdrop.addEventListener('click', (e) => {
       if (e.target === backdrop) {
         backdrop.classList.remove('active');
+        backdrop.classList.remove('open');
       }
     });
   }
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && backdrop && backdrop.classList.contains('active')) {
+    if (e.key === 'Escape' && backdrop && (backdrop.classList.contains('active') || backdrop.classList.contains('open'))) {
       backdrop.classList.remove('active');
+      backdrop.classList.remove('open');
     }
   });
 }
@@ -1146,6 +1149,7 @@ function openResumeModal() {
   const backdrop = document.getElementById('resume-modal-backdrop');
   if (backdrop) {
     backdrop.classList.add('active');
+    backdrop.classList.add('open');
   }
 }
 
