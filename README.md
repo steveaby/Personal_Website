@@ -37,11 +37,12 @@ Each flagship project features its own deep-dive case study page with architectu
 
 ## 📜 Certifications & Credentials Matrix
 
-A dedicated, filterable credentials portal ([`certifications.html`](certifications.html)) featuring 9 verified certifications with instant fullscreen Lightbox inspection and PDF views:
+A dedicated, filterable credentials portal ([`certifications.html`](certifications.html)) featuring 10 verified certifications with instant fullscreen Lightbox inspection and PDF views:
 
 * **Salesforce Agentforce Specialist** — Certification ID: `5754768`
-* **Salesforce Certified AI Associate** — Certification ID: `5624840`
+* **Salesforce Certified AI Associate** — Certification ID: `5624840` *(Discontinued by Salesforce)*
 * **Salesforce Marketing Cloud Email Specialist** — Certification ID: `5501094`
+* **HackerRank Problem Solving (Basic)** — Skill Certification ID: `9CD44A02F37A`
 * **Oracle Academy Database Foundations** — Relational Database Modeling & SQL
 * **NPTEL / IIT Python** — The Joy of Computing using Python
 * **LinkedIn Learning** — Foundations of Business Banking
@@ -62,7 +63,7 @@ An authentic replica of the original **2021 Ace Neutrino college portfolio** ([`
 ```tree
 Personal_Website/
 ├── index.html                  # Main portfolio homepage & HUD telemetry
-├── certifications.html         # Dedicated 9-certificate credentials matrix
+├── certifications.html         # Dedicated 10-certificate credentials matrix
 ├── aceneutrino.html            # Ace Neutrino (2021) team archive
 ├── style.css                   # Core cyber design system, tokens, and animations
 ├── script.js                   # Client runtime (terminal, audio, lightbox, modals)

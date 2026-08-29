@@ -339,7 +339,7 @@ function initCommandPalette() {
     { title: 'Project Deep Dive: IlliniRide', action: () => (window.location.href = getProjUrl('illiniride.html')) },
     { title: 'Project Deep Dive: HyperSafety', action: () => (window.location.href = getProjUrl('hypersafety.html')) },
     { title: 'Project Deep Dive: VectorQuest', action: () => (window.location.href = getProjUrl('vectorquest.html')) },
-    { title: 'View All Certifications & Credentials (Salesforce, Oracle, Python)', action: () => (window.location.href = isSubPage ? '../certifications.html' : 'certifications.html') },
+    { title: 'View All Certifications & Credentials (Salesforce, HackerRank, Oracle, Python)', action: () => (window.location.href = isSubPage ? '../certifications.html' : 'certifications.html') },
     { title: 'Team Archive: Ace Neutrino (2021 Collective)', action: () => (window.location.href = isSubPage ? '../aceneutrino.html' : 'aceneutrino.html') },
     { title: 'Jump to About Section', action: () => (isSubPage ? (window.location.href = '../index.html#about') : scrollToSection('#about')) },
     { title: 'Jump to Experience Timeline', action: () => (isSubPage ? (window.location.href = '../index.html#experience') : scrollToSection('#experience')) },
@@ -1037,7 +1037,7 @@ function initInteractiveTerminal() {
             }, 400);
             break;
           case 'skills':
-            responseText = `Languages: Python, JS/TS, SQL, C++, HTML/CSS<br>AI/ML: PyTorch, NLP, Vector DBs, OpenCV, CNNs<br>Enterprise: Salesforce Marketing Cloud (SFMC), AMPscript, SSJS, JIRA<br><span style="color:var(--cyan);">TIP:</span> Type <strong>certs</strong> to view official Salesforce, Oracle & Python credentials.`;
+            responseText = `Languages: Python, JS/TS, SQL, C++, HTML/CSS<br>AI/ML: PyTorch, NLP, Vector DBs, OpenCV, CNNs<br>Enterprise: Salesforce Marketing Cloud (SFMC), AMPscript, SSJS, JIRA<br><span style="color:var(--cyan);">TIP:</span> Type <strong>certs</strong> to view official Salesforce, HackerRank, Oracle & Python credentials.`;
             break;
           case 'contact':
             responseText = `Email: stonio2@illinois.edu | LinkedIn: linkedin.com/in/steveaby | Phone: +1 331-271-6861`;
