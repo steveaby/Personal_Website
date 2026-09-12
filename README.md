@@ -41,7 +41,7 @@ A dedicated, filterable credentials portal ([`certifications.html`](certificatio
 
 * **Salesforce Agentforce Specialist** — Certification ID: `5754768`
 * **Salesforce Certified AI Associate** — Certification ID: `5624840` *(Discontinued by Salesforce)*
-* **Salesforce Marketing Cloud Email Specialist** — Certification ID: `5501094`
+* **Salesforce Marketing Cloud Engagement Specialist** — Certification ID: `5501094`
 * **HackerRank Problem Solving (Basic)** — Skill Certification ID: `9CD44A02F37A`
 * **Oracle Academy Database Foundations** — Relational Database Modeling & SQL
 * **NPTEL / IIT Python** — The Joy of Computing using Python
