@@ -31,21 +31,39 @@ function initPreloader() {
 
   if (!bootScreen || !progressFill || !logContainer) return;
 
-  // Check if navigating back from a project page
-  const navEntry = window.performance && performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
-  const isReload = navEntry && navEntry.type === 'reload';
-  const cameFromProjects = document.referrer && document.referrer.includes('/projects/');
-  const fromProjectFlag = sessionStorage.getItem('from_project_subpage') === 'true';
+  // Failsafe timer: Ensure boot screen NEVER hangs on mobile/slow connections
+  const failsafeTimeout = setTimeout(() => {
+    if (!bootScreen.classList.contains('loaded')) {
+      bootScreen.classList.add('loaded');
+      setTimeout(() => { bootScreen.style.display = 'none'; }, 400);
+    }
+  }, 1800);
 
-  if (!isReload && (cameFromProjects || fromProjectFlag)) {
-    sessionStorage.removeItem('from_project_subpage');
-    bootScreen.style.display = 'none';
+  // Allow clicking anywhere to skip boot screen immediately
+  bootScreen.addEventListener('click', () => {
+    clearTimeout(failsafeTimeout);
     bootScreen.classList.add('loaded');
-    return;
-  }
+    setTimeout(() => { bootScreen.style.display = 'none'; }, 300);
+  });
 
-  // Clear any existing flag on fresh load
-  sessionStorage.removeItem('from_project_subpage');
+  // Check if navigating back from a project page safely
+  try {
+    const navEntry = window.performance && performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+    const isReload = navEntry && navEntry.type === 'reload';
+    const cameFromProjects = document.referrer && document.referrer.includes('/projects/');
+    const fromProjectFlag = sessionStorage.getItem('from_project_subpage') === 'true';
+
+    if (!isReload && (cameFromProjects || fromProjectFlag)) {
+      sessionStorage.removeItem('from_project_subpage');
+      clearTimeout(failsafeTimeout);
+      bootScreen.style.display = 'none';
+      bootScreen.classList.add('loaded');
+      return;
+    }
+    sessionStorage.removeItem('from_project_subpage');
+  } catch (e) {
+    // Storage access safety for Safari Private Mode
+  }
 
   const logs = [
     { text: 'CHECKING MEMORY REGISTERS...', status: 'OK' },
@@ -59,7 +77,7 @@ function initPreloader() {
   let logIndex = 0;
 
   const interval = setInterval(() => {
-    progress += Math.floor(Math.random() * 18) + 12;
+    progress += Math.floor(Math.random() * 22) + 15;
     if (progress > 100) progress = 100;
 
     progressFill.style.width = `${progress}%`;
@@ -75,11 +93,13 @@ function initPreloader() {
 
     if (progress >= 100) {
       clearInterval(interval);
+      clearTimeout(failsafeTimeout);
       setTimeout(() => {
         bootScreen.classList.add('loaded');
-      }, 500);
+        setTimeout(() => { bootScreen.style.display = 'none'; }, 500);
+      }, 350);
     }
-  }, 120);
+  }, 90);
 }
 
 /* ==========================================================================
@@ -90,30 +110,49 @@ function initBackgroundCanvas() {
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  let width, height;
+  let width = (canvas.width = window.innerWidth);
+  let height = (canvas.height = window.innerHeight);
   let particles = [];
-  let mouse = { x: null, y: null, radius: 180 };
+  let mouse = { x: null, y: null, radius: 140 };
+  let lastWidth = width;
 
   function resize() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-    createParticles();
+    // Only re-initialize if width changed to avoid address bar scroll thrashing on mobile
+    if (Math.abs(window.innerWidth - lastWidth) > 30 || Math.abs(window.innerHeight - height) > 120) {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      lastWidth = width;
+      createParticles();
+    }
   }
 
-  window.addEventListener('resize', resize);
+  window.addEventListener('resize', resize, { passive: true });
+  
   window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
-  });
+  }, { passive: true });
+
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches.length > 0) {
+      mouse.x = e.touches[0].clientX;
+      mouse.y = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => {
+    mouse.x = null;
+    mouse.y = null;
+  }, { passive: true });
 
   class Particle {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.8;
-      this.vy = (Math.random() - 0.5) * 0.8;
-      this.radius = Math.random() * 1.8 + 1;
-      this.baseAlpha = Math.random() * 0.4 + 0.2;
+      this.vx = (Math.random() - 0.5) * 0.6;
+      this.vy = (Math.random() - 0.5) * 0.6;
+      this.radius = Math.random() * 1.6 + 0.8;
+      this.baseAlpha = Math.random() * 0.35 + 0.15;
     }
 
     update() {
@@ -123,15 +162,15 @@ function initBackgroundCanvas() {
       if (this.x < 0 || this.x > width) this.vx *= -1;
       if (this.y < 0 || this.y > height) this.vy *= -1;
 
-      // Mouse distance interaction
-      if (mouse.x && mouse.y) {
+      // Distance interaction with mouse / touch
+      if (mouse.x !== null && mouse.y !== null) {
         const dx = mouse.x - this.x;
         const dy = mouse.y - this.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < mouse.radius) {
           const force = (mouse.radius - dist) / mouse.radius;
-          this.x -= (dx / dist) * force * 2;
-          this.y -= (dy / dist) * force * 2;
+          this.x -= (dx / dist) * force * 1.5;
+          this.y -= (dy / dist) * force * 1.5;
         }
       }
     }
@@ -140,16 +179,15 @@ function initBackgroundCanvas() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(0, 243, 255, ${this.baseAlpha})`;
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = '#00f3ff';
       ctx.fill();
-      ctx.shadowBlur = 0;
     }
   }
 
   function createParticles() {
     particles = [];
-    const count = Math.min(Math.floor((width * height) / 14000), 80);
+    const isMobile = window.innerWidth < 768;
+    const maxParticles = isMobile ? 32 : 70;
+    const count = Math.min(Math.floor((width * height) / 16000), maxParticles);
     for (let i = 0; i < count; i++) {
       particles.push(new Particle());
     }
@@ -157,6 +195,9 @@ function initBackgroundCanvas() {
 
   function animate() {
     ctx.clearRect(0, 0, width, height);
+
+    const isMobile = width < 768;
+    const maxDist = isMobile ? 100 : 125;
 
     // Draw connecting mesh lines
     for (let i = 0; i < particles.length; i++) {
@@ -168,13 +209,13 @@ function initBackgroundCanvas() {
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 130) {
+        if (dist < maxDist) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          const alpha = (1 - dist / 130) * 0.15;
+          const alpha = (1 - dist / maxDist) * 0.12;
           ctx.strokeStyle = `rgba(0, 243, 255, ${alpha})`;
-          ctx.lineWidth = 0.8;
+          ctx.lineWidth = 0.6;
           ctx.stroke();
         }
       }
@@ -183,7 +224,7 @@ function initBackgroundCanvas() {
     requestAnimationFrame(animate);
   }
 
-  resize();
+  createParticles();
   animate();
 }
 
@@ -291,7 +332,9 @@ function initTypewriter() {
    5. 3D CARD TILT EFFECT
    ========================================================================== */
 function initTiltEffects() {
-  // Only apply 3D tilt tracking to non-interactive decorative cards
+  // Only apply 3D tilt tracking on devices with a mouse/hover support to prevent stuck tilts on touch screens
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
   const cards = document.querySelectorAll('.profile-card, .hero-hud-card');
 
   cards.forEach((card) => {
@@ -1095,15 +1138,56 @@ function initScrollSpyAndCounters() {
     });
   }
 
-  // Mobile drawer toggle
+  // Mobile drawer toggle & controls
   const mobileToggle = document.getElementById('mobile-toggle');
   const mobileNav = document.getElementById('mobile-nav');
+  const mobileNavClose = document.getElementById('mobile-nav-close');
+
+  function closeMobileNav() {
+    if (mobileNav) {
+      mobileNav.classList.remove('open');
+      if (mobileToggle) {
+        const icon = mobileToggle.querySelector('i');
+        if (icon) icon.className = 'fas fa-bars';
+      }
+    }
+  }
+
+  function openMobileNav() {
+    if (mobileNav) {
+      mobileNav.classList.add('open');
+      if (mobileToggle) {
+        const icon = mobileToggle.querySelector('i');
+        if (icon) icon.className = 'fas fa-times';
+      }
+    }
+  }
+
   if (mobileToggle && mobileNav) {
-    mobileToggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('open');
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (mobileNav.classList.contains('open')) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
     });
+
+    if (mobileNavClose) {
+      mobileNavClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeMobileNav();
+      });
+    }
+
+    mobileNav.addEventListener('click', (e) => {
+      if (e.target === mobileNav) {
+        closeMobileNav();
+      }
+    });
+
     mobileNav.querySelectorAll('.nav-link').forEach((l) => {
-      l.addEventListener('click', () => mobileNav.classList.remove('open'));
+      l.addEventListener('click', () => closeMobileNav());
     });
   }
 }
