@@ -1238,28 +1238,37 @@ function openResumeModal() {
 }
 
 function switchResume(type) {
+  const isSubPage = window.location.pathname.includes('/projects/');
+  const basePath = isSubPage ? '../assets/resume/' : 'assets/resume/';
   const iframe = document.getElementById('resume-iframe');
   const btnCondensed = document.getElementById('btn-resume-condensed');
   const btnFull = document.getElementById('btn-resume-full');
+  const openExternalBtn = document.getElementById('btn-open-pdf-external');
 
   if (type === 'condensed') {
-    if (iframe) iframe.src = 'assets/resume/Steve_Resume.pdf';
+    const pdfUrl = `${basePath}Steve_Resume.pdf`;
+    if (iframe) iframe.src = pdfUrl;
+    if (openExternalBtn) openExternalBtn.href = pdfUrl;
     if (btnCondensed) btnCondensed.classList.add('active');
     if (btnFull) btnFull.classList.remove('active');
   } else {
-    if (iframe) iframe.src = 'assets/resume/Steve_Resume_Full.pdf';
+    const pdfUrl = `${basePath}Steve_Resume_Full.pdf`;
+    if (iframe) iframe.src = pdfUrl;
+    if (openExternalBtn) openExternalBtn.href = pdfUrl;
     if (btnFull) btnFull.classList.add('active');
     if (btnCondensed) btnCondensed.classList.remove('active');
   }
 }
 
 function downloadResume(type) {
+  const isSubPage = window.location.pathname.includes('/projects/');
+  const basePath = isSubPage ? '../assets/resume/' : 'assets/resume/';
   const link = document.createElement('a');
   if (type === '1page') {
-    link.href = 'assets/resume/Steve_Resume.pdf';
+    link.href = `${basePath}Steve_Resume.pdf`;
     link.download = 'Steve_Aby_Tonio_Resume.pdf';
   } else {
-    link.href = 'assets/resume/Steve_Resume_Full.pdf';
+    link.href = `${basePath}Steve_Resume_Full.pdf`;
     link.download = 'Steve_Aby_Tonio_Resume_Full.pdf';
   }
   document.body.appendChild(link);

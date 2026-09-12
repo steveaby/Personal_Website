@@ -1021,19 +1021,17 @@
       </button>
 
       <div class="resume-modal-header">
-        <div>
-          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); letter-spacing: 1px;">//
-            CURRICULUM_VITAE</span>
-          <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--text-main); margin-top: 2px;">
-            STEVE ABY TONIO — RESUME</h2>
+        <div class="resume-modal-title-group">
+          <span class="resume-modal-tag">// CURRICULUM_VITAE</span>
+          <h2 class="resume-modal-title">STEVE ABY TONIO — RESUME</h2>
         </div>
 
         <div class="resume-tabs">
           <button id="btn-resume-condensed" class="resume-tab-btn active" onclick="switchResume('condensed')">
-            <i class="fas fa-file-alt"></i> 1-PAGE CONDENSED
+            <i class="fas fa-file-alt"></i> <span>1-PAGE CONDENSED</span>
           </button>
           <button id="btn-resume-full" class="resume-tab-btn" onclick="switchResume('full')">
-            <i class="fas fa-file-invoice"></i> FULL COMPREHENSIVE
+            <i class="fas fa-file-invoice"></i> <span>FULL COMPREHENSIVE</span>
           </button>
         </div>
       </div>
@@ -1041,23 +1039,27 @@
       <div class="resume-frame-wrapper">
         <iframe id="resume-iframe" class="resume-frame" src="assets/resume/Steve_Resume.pdf"
           title="Steve Aby Tonio Resume PDF"></iframe>
+        <div class="resume-mobile-helper">
+          <p><i class="fas fa-mobile-alt"></i> For optimal mobile reading & pinch-to-zoom:</p>
+          <a id="btn-open-pdf-external" href="assets/resume/Steve_Resume.pdf" target="_blank" class="cyber-btn cyber-btn-sm">
+            <i class="fas fa-external-link-alt"></i> <span>OPEN FULLSCREEN PDF</span>
+          </a>
+        </div>
       </div>
 
       <div class="resume-modal-footer">
-        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
-          <i class="fas fa-info-circle" style="color: var(--cyan);"></i> Preview both versions above or download the PDF
-          directly below.
+        <span class="resume-modal-footer-hint">
+          <i class="fas fa-info-circle" style="color: var(--cyan);"></i> Preview both versions above or download the PDF directly below.
         </span>
 
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <div class="resume-modal-actions">
           <a id="btn-download-resume-1page" href="assets/resume/Steve_Resume.pdf" download="Steve_Aby_Tonio_Resume.pdf"
-            class="cyber-btn" style="padding: 8px 16px; font-size: 0.82rem;">
-            <i class="fas fa-download"></i> DOWNLOAD 1-PAGE (PDF)
+            class="cyber-btn cyber-btn-sm">
+            <i class="fas fa-download"></i> <span>DOWNLOAD 1-PAGE (PDF)</span>
           </a>
           <a id="btn-download-resume-full" href="assets/resume/Steve_Resume_Full.pdf"
-            download="Steve_Aby_Tonio_Resume_Full.pdf" class="cyber-btn cyber-btn-secondary"
-            style="padding: 8px 16px; font-size: 0.82rem;">
-            <i class="fas fa-file-download"></i> DOWNLOAD FULL (PDF)
+            download="Steve_Aby_Tonio_Resume_Full.pdf" class="cyber-btn cyber-btn-sm cyber-btn-secondary">
+            <i class="fas fa-file-download"></i> <span>DOWNLOAD FULL (PDF)</span>
           </a>
         </div>
       </div>

@@ -43,31 +43,67 @@
   <div class="hud-corner bottom-left"></div>
   <div class="hud-corner bottom-right"></div>
 
-  <!-- Navigation Header -->
-  <header class="project-page-header">
-    <div class="project-page-nav-container">
-      <a href="index.html" class="back-btn" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
-        <i class="fas fa-chevron-left"></i> // RETURN_TO_BASE
-      </a>
-
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
       <a href="index.html" class="nav-logo" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
         <img src="assets/favicon.svg" alt="Logo" class="nav-logo-icon">
         <span>STEVE<span class="dot">.DEV</span></span>
       </a>
 
-      <div style="display: flex; gap: 10px; align-items: center;">
-        <button class="cmd-k-trigger" aria-label="Open command palette">
-          <span class="cmd-k-key">⌘K</span> <span class="cmd-k-text">COMMANDS</span>
+      <ul class="nav-menu">
+        <li><a href="index.html#about" class="nav-link">ABOUT</a></li>
+        <li><a href="index.html#experience" class="nav-link">EXPERIENCE</a></li>
+        <li><a href="index.html#projects" class="nav-link">PROJECTS</a></li>
+        <li><a href="index.html#skills" class="nav-link">SKILLS</a></li>
+        <li><a href="certifications.html" class="nav-link active">CERTS</a></li>
+        <li><a href="index.html#research" class="nav-link">RESEARCH</a></li>
+        <li><a href="index.html#contact" class="nav-link">COMMS</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn cmd-k-trigger" aria-label="Open Command Palette" title="Command Palette (⌘K)">
+          <i class="fas fa-terminal"></i>
+          <span class="cmd-badge">⌘K</span>
         </button>
-        <button class="cyber-btn cyber-btn-sm btn-open-resume">
+        <button class="cyber-btn cyber-btn-sm btn-open-resume" style="padding: 6px 14px; font-size: 0.8rem;">
           <i class="fas fa-file-pdf"></i> <span>RESUME</span>
+        </button>
+        <a href="mailto:stonio2@illinois.edu" class="cyber-btn cyber-btn-sm">
+          <span>CONTACT</span> <i class="fas fa-paper-plane"></i>
+        </a>
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
   </header>
 
+  <!-- Mobile Nav Drawer -->
+  <nav id="mobile-nav" class="mobile-nav">
+    <button id="mobile-nav-close" class="mobile-nav-close" aria-label="Close navigation">
+      <i class="fas fa-times"></i>
+    </button>
+    <a href="index.html#about" class="nav-link">ABOUT</a>
+    <a href="index.html#experience" class="nav-link">EXPERIENCE</a>
+    <a href="index.html#projects" class="nav-link">PROJECTS</a>
+    <a href="index.html#skills" class="nav-link">SKILLS</a>
+    <a href="certifications.html" class="nav-link active" style="color: var(--cyan); font-weight: 700;">CERTS</a>
+    <a href="index.html#research" class="nav-link">RESEARCH</a>
+    <a href="index.html#contact" class="nav-link">COMMS</a>
+    <a href="mailto:stonio2@illinois.edu" class="nav-link" style="color: var(--cyan); font-weight: 700;">
+      <i class="fas fa-paper-plane"></i> CONTACT ME
+    </a>
+  </nav>
+
   <!-- Main Hero Section -->
   <main class="project-hero-section">
+    <div style="margin-bottom: 1.5rem;">
+      <a href="index.html" class="back-btn" onclick="sessionStorage.setItem('from_project_subpage', 'true');">
+        <i class="fas fa-chevron-left"></i> <span>// RETURN_TO_BASE</span>
+      </a>
+    </div>
+
     <div class="project-hero-badge-row">
       <span class="project-category-badge">VERIFIED CREDENTIALS</span>
       <span class="project-tag">INDUSTRY CERTIFICATIONS & ACADEMIC DISTINCTIONS</span>
@@ -373,18 +409,17 @@
       </button>
 
       <div class="resume-modal-header">
-        <div>
-          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); letter-spacing: 1px;">// CURRICULUM_VITAE</span>
-          <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--text-main); margin-top: 2px;">
-            STEVE ABY TONIO — RESUME</h2>
+        <div class="resume-modal-title-group">
+          <span class="resume-modal-tag">// CURRICULUM_VITAE</span>
+          <h2 class="resume-modal-title">STEVE ABY TONIO — RESUME</h2>
         </div>
 
         <div class="resume-tabs">
           <button id="btn-resume-condensed" class="resume-tab-btn active" onclick="switchResume('condensed')">
-            <i class="fas fa-file-alt"></i> 1-PAGE CONDENSED
+            <i class="fas fa-file-alt"></i> <span>1-PAGE CONDENSED</span>
           </button>
           <button id="btn-resume-full" class="resume-tab-btn" onclick="switchResume('full')">
-            <i class="fas fa-file-invoice"></i> FULL COMPREHENSIVE
+            <i class="fas fa-file-invoice"></i> <span>FULL COMPREHENSIVE</span>
           </button>
         </div>
       </div>
@@ -392,22 +427,27 @@
       <div class="resume-frame-wrapper">
         <iframe id="resume-iframe" class="resume-frame" src="assets/resume/Steve_Resume.pdf"
           title="Steve Aby Tonio Resume PDF"></iframe>
+        <div class="resume-mobile-helper">
+          <p><i class="fas fa-mobile-alt"></i> For optimal mobile reading & pinch-to-zoom:</p>
+          <a id="btn-open-pdf-external" href="assets/resume/Steve_Resume.pdf" target="_blank" class="cyber-btn cyber-btn-sm">
+            <i class="fas fa-external-link-alt"></i> <span>OPEN FULLSCREEN PDF</span>
+          </a>
+        </div>
       </div>
 
       <div class="resume-modal-footer">
-        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+        <span class="resume-modal-footer-hint">
           <i class="fas fa-info-circle" style="color: var(--cyan);"></i> Preview both versions above or download the PDF directly below.
         </span>
 
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <div class="resume-modal-actions">
           <a id="btn-download-resume-1page" href="assets/resume/Steve_Resume.pdf" download="Steve_Aby_Tonio_Resume.pdf"
-            class="cyber-btn" style="padding: 8px 16px; font-size: 0.82rem;">
-            <i class="fas fa-download"></i> DOWNLOAD 1-PAGE (PDF)
+            class="cyber-btn cyber-btn-sm">
+            <i class="fas fa-download"></i> <span>DOWNLOAD 1-PAGE (PDF)</span>
           </a>
           <a id="btn-download-resume-full" href="assets/resume/Steve_Resume_Full.pdf"
-            download="Steve_Aby_Tonio_Resume_Full.pdf" class="cyber-btn cyber-btn-secondary"
-            style="padding: 8px 16px; font-size: 0.82rem;">
-            <i class="fas fa-file-download"></i> DOWNLOAD FULL (PDF)
+            download="Steve_Aby_Tonio_Resume_Full.pdf" class="cyber-btn cyber-btn-sm cyber-btn-secondary">
+            <i class="fas fa-file-download"></i> <span>DOWNLOAD FULL (PDF)</span>
           </a>
         </div>
       </div>
